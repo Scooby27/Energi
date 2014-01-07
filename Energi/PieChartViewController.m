@@ -35,9 +35,9 @@
                        [NSNumber numberWithInt:4],
                        nil];
     self.valueArray2 = [[NSMutableArray alloc] initWithObjects:
-                        [NSNumber numberWithInt:3],
+                        [NSNumber numberWithInt:1],
                         [NSNumber numberWithInt:2],
-                        [NSNumber numberWithInt:2],
+                        [NSNumber numberWithInt:5],
                         nil];
     
     self.colorArray = [NSMutableArray arrayWithObjects:
@@ -65,7 +65,6 @@
     self.pieChartView = [[PieChartView alloc]initWithFrame:self.pieContainer.bounds withValue:self.valueArray withColor:self.colorArray];
     self.pieChartView.delegate = self;
     [self.pieContainer addSubview:self.pieChartView];
-    [self.pieChartView setAmountText:@"100"];
     [self.view addSubview:self.pieContainer];
     
     //add selected view
@@ -109,6 +108,7 @@
 - (void)selectedFinish:(PieChartView *)pieChartView index:(NSInteger)index percent:(float)per
 {
     self.selLabel.text = [NSString stringWithFormat:@"%2.2f%@",per*100,@"%"];
+    [self.pieChartView setAmountText:[NSString stringWithFormat:@"%2.2f%@",per*100,@"%"]];
 }
 
 - (void)onCenterClick:(PieChartView *)pieChartView
@@ -123,11 +123,9 @@
     
     if (self.inOut) {
         [self.pieChartView setTitleText:@"Energy"];
-        [self.pieChartView setAmountText:@"100 kw/h"];
         
     }else{
         [self.pieChartView setTitleText:@"Cost"];
-        [self.pieChartView setAmountText:@"£50"];
     }
 }
 
