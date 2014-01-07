@@ -49,7 +49,7 @@
     for (int i = 0; i < [users count]; i++){
         NSArray *attributes = [[users objectAtIndex:i] componentsSeparatedByString:@" "];
         NSString *user = [attributes objectAtIndex:0];
-        if ([obj.username isEqualToString:user]){
+        if ([obj.houseID isEqualToString:user]){
             NSString *budget = [NSString stringWithFormat:@" %i\n", budgetValue];
             if([attributes count] > 2){
                 newuser = [[[[attributes objectAtIndex:0] stringByAppendingString:@" "] stringByAppendingString:[attributes objectAtIndex:1]] stringByAppendingString:budget];

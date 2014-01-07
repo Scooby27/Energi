@@ -12,7 +12,7 @@
 
 @synthesize budget;
 
-@synthesize username;
+@synthesize houseID;
 
 @synthesize sourceview;
 

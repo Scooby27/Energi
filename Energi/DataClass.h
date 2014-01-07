@@ -16,7 +16,7 @@
 
 @property (nonatomic) int budget;
 
-@property (nonatomic, retain) NSString *username;
+@property (nonatomic, retain) NSString *houseID;
 
 @property (nonatomic, retain) UIViewController* sourceview;
 

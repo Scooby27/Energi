@@ -47,7 +47,7 @@
                                     <action selector="login:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="xMW-2Q-SKM"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="center" minimumFontSize="17" id="8F5-Yb-3OT">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="House ID" textAlignment="center" minimumFontSize="17" id="8F5-Yb-3OT">
                                 <rect key="frame" x="20" y="108" width="280" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -932,7 +932,7 @@
     <inferredMetricsTieBreakers>
         <segue reference="i9g-NP-BoT"/>
         <segue reference="Nc9-Au-rOK"/>
-        <segue reference="tz6-a2-cwn"/>
+        <segue reference="FSN-rg-VPU"/>
         <segue reference="5AF-rY-1z7"/>
     </inferredMetricsTieBreakers>
 </document>

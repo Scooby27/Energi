@@ -18,8 +18,9 @@
     
     DataClass *obj = [DataClass getInstance];
     obj.budget = 55;
-    obj.username = @"";
+    obj.houseID = @"";
     // Clears any value each user.
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -37,7 +38,7 @@
 - (IBAction)registerAlert:(id)sender {
     
     UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Register Details"
-                                                      message:@"Please enter your desired username and password."
+                                                      message:@"Please enter your House ID and password. Both can be found on your Smart Meter."
                                                      delegate:self
                                             cancelButtonTitle:@"Cancel"
                                             otherButtonTitles:@"Register", nil];
@@ -45,6 +46,8 @@
     
     [alert setAlertViewStyle:UIAlertViewStyleLoginAndPasswordInput];
     // Creates text fields for the user to input their username and password.
+    
+    [alert textFieldAtIndex:0].placeholder = @"House ID";
     
     [alert show];
     // Show the alert.
@@ -60,17 +63,17 @@
     
     if([title isEqualToString:@"Register"])
     {
-        NSString *userInit = [alertView textFieldAtIndex:0].text;
-        NSString *user = [userInit stringByTrimmingCharactersInSet: [NSCharacterSet whitespaceCharacterSet]];
+        NSString *houseIDInit = [alertView textFieldAtIndex:0].text;
+        NSString *houseID = [houseIDInit stringByTrimmingCharactersInSet: [NSCharacterSet whitespaceCharacterSet]];
         NSString *password = [alertView textFieldAtIndex:1].text;
         NSUInteger hashValueInt = [password hash];
         NSString *hashValue = [NSString stringWithFormat:@" %lu\n", (unsigned long)hashValueInt];
         // Get the value of the username and the hashed value of the password.
         
         BOOL valid = YES;
-        for (int i = 0; i < [user length]; i++){
-            if([user characterAtIndex:i] == ' '){
-                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Registration Warning!" message:@"Username cannot contain any spaces." delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
+        for (int i = 0; i < [houseID length]; i++){
+            if([houseID characterAtIndex:i] == ' '){
+                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Registration Warning!" message:@"House ID cannot contain any spaces." delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
                 // Sets up warning alert.
                 
                 [alert show];
@@ -80,7 +83,7 @@
             }
         }
         
-        if (([user length] == 0) || hashValueInt == 0){
+        if (([houseID length] == 0) || hashValueInt == 0){
             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Registration Warning!" message:@"Cannot have any blank fields." delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
             // Sets up warning alert.
             
@@ -95,9 +98,8 @@
             NSString *appFile = [documentsDirectory stringByAppendingPathComponent:@"users.csv"];
             // Creates or finds the csv file to store usernames and hashed passwords.
             
-            
             NSString *oldLines = [NSString stringWithContentsOfFile:appFile encoding:1 error:NULL];
-            NSString *newline = [user stringByAppendingString:hashValue];
+            NSString *newline = [houseID stringByAppendingString:hashValue];
             
             NSString *line = newline;
             
@@ -108,8 +110,8 @@
                 for (int i = 0; i < [combos count]; i++){
                     NSArray *attributes = [[combos objectAtIndex:i] componentsSeparatedByString:@" "];
         
-                    if([user isEqualToString:[attributes objectAtIndex:0]]){
-                        NSString *error = [NSString stringWithFormat:@"Username \"%@\" is already taken. Please try again.", user];
+                    if([houseID isEqualToString:[attributes objectAtIndex:0]]){
+                        NSString *error = [NSString stringWithFormat:@"House ID \"%@\" has already registered. Please try again.", houseID];
                         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Registration Warning!" message:error delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
                         // Sets up warning alert.
                         
@@ -128,13 +130,15 @@
                 [line writeToFile:appFile atomically:YES encoding:NSUTF8StringEncoding error:NULL];
                 // Write to .csv file.
                 
-                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Registration Successful!" message:@"You are now logged in." delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
+                NSString *successMessage = [NSString stringWithFormat:@"You are now logged in with House ID: %@.", houseID];
+                
+                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Registration Successful!" message:successMessage delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
                 // Sets up warning alert.
                 
                 [alert show];
                 // Show the alert.
                 
-                self.textField.text = user;
+                self.textField.text = houseID;
                 self.textField1.text = password;
                 [self login:self];
                 // Login with the new registered member.
@@ -156,25 +160,25 @@
     [self.textField1 resignFirstResponder];
     // If login is actioned ensure all keyboards are resigned.
     
-    self.userName = self.textField.text;
+    self.houseID = self.textField.text;
     // Set username as input text.
     
     self.password = self.textField1.text;
     // Set password as input text.
     
-    NSString *usernameString = self.userName;
+    NSString *houseIDString = self.houseID;
     // Create NSString object containing username.
     
     BOOL successfulLogin = NO;
     // Initialise login boolean.
     
-    usernameString = [usernameString lowercaseString];
+    houseIDString = [houseIDString lowercaseString];
     // Username not case sensitive.
   
     NSUInteger passwordHashInt = [self.password hash];
     // Creates a hash value of the password for security.
     
-    if ([usernameString length] != 0){
+    if ([houseIDString length] != 0){
         
         NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
         NSString *documentsDirectory = [paths objectAtIndex:0];
@@ -194,7 +198,7 @@
             for (int i = 0; i < [combos count]; i++){
                 NSArray *attributes = [[combos objectAtIndex:i] componentsSeparatedByString:@" "];
                 
-                if([usernameString isEqualToString:[attributes objectAtIndex:0]]){
+                if([houseIDString isEqualToString:[attributes objectAtIndex:0]]){
                     if(passwordHashInt == [[attributes objectAtIndex:1] longLongValue]){
                         successfulLogin = YES;
                         if ([attributes count] > 2){
@@ -207,13 +211,13 @@
             
             if (successfulLogin){
                 
-                obj.username = usernameString;
+                obj.houseID = houseIDString;
                 UIStoryboard *mainSB = [UIStoryboard storyboardWithName: @"Main_iPhone" bundle:nil];
                 UIViewController *vc = [mainSB instantiateViewControllerWithIdentifier:@"energiMenuView"];
                 [self presentViewController:vc animated:YES completion:nil];
                 // If correct login then continue to app.
             }else{
-                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Login Warning!" message:@"Please enter a valid username and password." delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
+                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Login Warning!" message:@"Please enter a valid House ID and password." delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
                 // Sets up warning alert.
                 
                 [alert show];

@@ -23,7 +23,7 @@
 
 @property (weak, nonatomic) IBOutlet UITextField *textField1;
 
-@property (copy, nonatomic) NSString *userName;
+@property (copy, nonatomic) NSString *houseID;
 
 @property (copy, nonatomic) NSString *password;
 
