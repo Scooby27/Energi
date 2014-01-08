@@ -171,7 +171,7 @@
     self.selLabel.font = [UIFont systemFontOfSize:17];
     self.selLabel.textColor = [UIColor whiteColor];
     [selView addSubview:self.selLabel];
-    [self.pieChartView setTitleText:@"Appliances"];
+    [self.pieChartView setTitleText:@"App \n Share"];
     self.title = @"Cost";
 }
 

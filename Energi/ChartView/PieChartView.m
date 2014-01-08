@@ -104,6 +104,7 @@
 {
     [self.title setText:text];
 }
+
 - (void)setAmountText:(NSString *)text
 {
     [self.amountLabel setText:text];
@@ -138,7 +139,6 @@
 
 - (void)selectedFinish:(RotatedView *)rotatedView index:(NSInteger)index percent:(float)per title:(NSString *)title
 {
-    NSLog(@"per - %f title - %@", per, title);
     [self.delegate selectedFinish:self index:index percent:per title:title];
 }
 
