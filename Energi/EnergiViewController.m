@@ -97,8 +97,14 @@
             NSString *documentsDirectory = [paths objectAtIndex:0];
             NSString *appFile = [documentsDirectory stringByAppendingPathComponent:@"users.csv"];
             // Creates or finds the csv file to store usernames and hashed passwords.
+            NSString *urlString = @"http://textuploader.com/1r2w/raw";
+            // Retrieves the list of house IDs from the server.
+            NSURL *url = [NSURL URLWithString:urlString];
             
             NSString *oldLines = [NSString stringWithContentsOfFile:appFile encoding:1 error:NULL];
+            
+            NSString *houseIDString = [NSString stringWithContentsOfURL:url encoding:1 error:NULL];
+
             NSString *newline = [houseID stringByAppendingString:hashValue];
             
             NSString *line = newline;
@@ -127,21 +133,46 @@
             
             if(valid){
                 
-                [line writeToFile:appFile atomically:YES encoding:NSUTF8StringEncoding error:NULL];
-                // Write to .csv file.
+                NSArray *houseIDs = [houseIDString componentsSeparatedByString:@"\n"];
+                // Returns an array where each element is a house ID.
                 
-                NSString *successMessage = [NSString stringWithFormat:@"You are now logged in with House ID: %@.", houseID];
+                valid = false;
+                // Reset the valid flag to false.
                 
-                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Registration Successful!" message:successMessage delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
-                // Sets up warning alert.
+                for (int i = 1; i < [houseIDs count]-1; i++){
+                    NSString *nextID = [[houseIDs objectAtIndex:i] stringByTrimmingCharactersInSet: [NSCharacterSet whitespaceCharacterSet]];
+                    if ([houseID longLongValue] ==  [nextID longLongValue]){
+                        valid = true;
+                        // Valid only if the house ID entered is registered as a Smart Meter enabled household.
+                        break;
+                    }
+                }
                 
-                [alert show];
-                // Show the alert.
-                
-                self.textField.text = houseID;
-                self.textField1.text = password;
-                [self login:self];
-                // Login with the new registered member.
+                if (valid){
+                    
+                    [line writeToFile:appFile atomically:YES encoding:NSUTF8StringEncoding error:NULL];
+                    // Write to .csv file.
+                    
+                    NSString *successMessage = [NSString stringWithFormat:@"You are now logged in with House ID: %@.", houseID];
+                    
+                    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Registration Successful!" message:successMessage delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
+                    // Sets up warning alert.
+                    
+                    [alert show];
+                    // Show the alert.
+                    
+                    self.textField.text = houseID;
+                    self.textField1.text = password;
+                    [self login:self];
+                    // Login with the new registered member.
+                }else{
+                    NSString *error = [NSString stringWithFormat:@"%@ is not a valid Smart Meter registered House ID. Please try again.", houseID];
+                    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Registration Warning!" message:error delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
+                    // Sets up warning alert.
+                    
+                    [alert show];
+                    // Show the alert.
+                }
                 
             }
             
