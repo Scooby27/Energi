@@ -14,13 +14,14 @@
 @class RotatedView;
 @protocol RotatedViewDelegate <NSObject>
 @optional
-- (void)selectedFinish:(RotatedView *)rotatedView index:(NSInteger)index percent:(float)per;
+- (void)selectedFinish:(RotatedView *)rotatedView index:(NSInteger)index percent:(float)per title:(NSString *)title;
 @end
 
 @interface RotatedView : UIView<RenderViewDataSource,RenderViewtDelegate> {
     float               mZeroAngle;
     NSMutableArray     *mValueArray;
     NSMutableArray     *mColorArray;
+    NSMutableArray     *mTitleArray;
     NSMutableArray     *mThetaArray;
     
     BOOL                isAnimating;
@@ -41,6 +42,7 @@
 @property (nonatomic)         BOOL            isAutoRotation;
 @property (nonatomic, retain) NSMutableArray *mValueArray;
 @property (nonatomic, retain) NSMutableArray *mColorArray;
+@property (nonatomic, retain) NSMutableArray *mTitleArray;
 @property (nonatomic, retain) UITextView     *mInfoTextView;
 
 - (void)startedAnimate;

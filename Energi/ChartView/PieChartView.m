@@ -18,14 +18,15 @@
     self.amountLabel = nil;
 }
 
-- (id)initWithFrame:(CGRect)frame withValue:(NSMutableArray *)valueArr withColor:(NSMutableArray *)colorArr
+- (id)initWithFrame:(CGRect)frame withValue:(NSMutableArray *)valueArr withColor:(NSMutableArray *)colorArr withTitle:(NSMutableArray *)titleArr
 {
     self = [super initWithFrame:frame];
     if (self) {
-        [self sortValueArr:valueArr colorArr:colorArr];
+        [self sortValueArr:valueArr colorArr:colorArr titleArr:titleArr];
         self.rotatedView = [[RotatedView alloc]initWithFrame:self.bounds];
         self.rotatedView.mValueArray = valueArr;
         self.rotatedView.mColorArray = colorArr;
+        self.rotatedView.mTitleArray = titleArr;
         self.rotatedView.delegate = self;
         [self addSubview:self.rotatedView];
         
@@ -61,7 +62,7 @@
     return self;
 }
 
-- (void)sortValueArr:(NSMutableArray *)valueArr colorArr:(NSMutableArray *)colorArr
+- (void)sortValueArr:(NSMutableArray *)valueArr colorArr:(NSMutableArray *)colorArr titleArr:(NSMutableArray *)titleArr
 {
     float sum = 0.0;
     int maxIndex = 0;
@@ -88,6 +89,7 @@
     if (maxIndex != changeIndex) {
         [valueArr exchangeObjectAtIndex:maxIndex withObjectAtIndex:changeIndex];
         [colorArr exchangeObjectAtIndex:maxIndex withObjectAtIndex:changeIndex];
+        [titleArr exchangeObjectAtIndex:maxIndex withObjectAtIndex:changeIndex];
     }
 }
 
@@ -134,9 +136,10 @@
     [self.rotatedView reloadPie];
 }
 
-- (void)selectedFinish:(RotatedView *)rotatedView index:(NSInteger)index percent:(float)per
+- (void)selectedFinish:(RotatedView *)rotatedView index:(NSInteger)index percent:(float)per title:(NSString *)title
 {
-    [self.delegate selectedFinish:self index:index percent:per];
+    NSLog(@"per - %f title - %@", per, title);
+    [self.delegate selectedFinish:self index:index percent:per title:title];
 }
 
 @end

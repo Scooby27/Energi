@@ -14,14 +14,14 @@
 @protocol PieChartDelegate <NSObject>
 
 @optional
-- (void)selectedFinish:(PieChartView *)pieChartView index:(NSInteger)index percent:(float)per;
+- (void)selectedFinish:(PieChartView *)pieChartView index:(NSInteger)index percent:(float)per title:(NSString *) title;
 - (void)onCenterClick:(PieChartView *)PieChartView;
 @end
 
 @interface PieChartView : UIView <RotatedViewDelegate>
 
 @property(nonatomic, assign) id<PieChartDelegate> delegate;
-- (id)initWithFrame:(CGRect)frame withValue:(NSMutableArray *)valueArr withColor:(NSMutableArray *)colorArr;
+- (id)initWithFrame:(CGRect)frame withValue:(NSMutableArray *)valueArr withColor:(NSMutableArray *)colorArr withTitle:(NSMutableArray *)titleArr;
 - (void)reloadChart;
 - (void)setAmountText:(NSString *)text;
 - (void)setTitleText:(NSString *)text;

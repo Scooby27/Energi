@@ -31,6 +31,7 @@
 @synthesize mZeroAngle;
 @synthesize mValueArray;
 @synthesize mColorArray;
+@synthesize mTitleArray;
 @synthesize mInfoTextView;
 @synthesize isAutoRotation;
 @synthesize fracValue;
@@ -44,6 +45,7 @@
     [UIView setAnimationDelegate:nil];
     mValueArray = nil;
     mColorArray = nil;
+    mTitleArray = nil;
     mThetaArray = nil;
     mInfoTextView = nil;
     mDragBeforeDate = nil;
@@ -87,7 +89,7 @@
     int wedges = (int)[mValueArray count];
     if (wedges > [mColorArray count]) {
         NSLog(@"Number of colors is not enough: please add %i kinds of colors.",wedges - (int)[mColorArray count]);
-        for (int i = (int)[mColorArray count]; i<wedges; ++i) {
+        for (int i = (int)[mColorArray count]; i < wedges; ++i) {
             [mColorArray addObject:[UIColor whiteColor]];
         }
     }
@@ -138,7 +140,6 @@
     return theta;
 }
 
-/* 计算将当前以相对角度为单位的触摸点旋转到绝对角度为newTheta的位置所需要旋转到的角度(*_*!真尼玛拗口) */
 - (float)rotationThetaForNewTheta:(float)newTheta {
     float rotationTheta;
     if (mRelativeTheta > (3 * M_PI / 2) && (newTheta < M_PI / 2)) {
@@ -175,7 +176,6 @@
 {
     double tan2 = atan2(self.transform.b, self.transform.a);
     //    CGFloat angle = [(NSNumber *)[self valueForKeyPath:@"layer.transform.rotation.z"] floatValue];
-    //根据旋转角度判断当前在那个扇区中
     float curTheta = M_PI/2 - tan2;
     curTheta = curTheta > 0?curTheta:M_PI*2+curTheta;
     int selIndex = 0;
@@ -184,11 +184,11 @@
             break;
         }
     }
-    //根据当前旋转弧度和选中扇区的起止弧度，判断居中需要旋转的弧度
+    
     float calTheta = [[mThetaArray objectAtIndex:selIndex] floatValue] - curTheta;
     float fanTheta = [[mValueArray objectAtIndex:selIndex] floatValue] * self.fracValue;
     float rotateTheta = fanTheta/2 - calTheta;
-    //设置动画旋转
+    
     [UIView animateWithDuration:0.42 animations:^{
         self.transform = CGAffineTransformRotate(self.transform,rotateTheta);
     } completion:^(BOOL finished) {
@@ -212,9 +212,10 @@
         sum += [[mValueArray objectAtIndex:i] floatValue];
     }
     float percent = [[mValueArray objectAtIndex:index] floatValue]/sum;
+    NSString *title = [mTitleArray objectAtIndex:index];
     self.selectedIndex = index;
-    if ([self.delegate respondsToSelector:@selector(selectedFinish:index:percent:)]) {
-        [self.delegate selectedFinish:self index:index percent:percent];
+    if ([self.delegate respondsToSelector:@selector(selectedFinish:index:percent:title:)]) {
+        [self.delegate selectedFinish:self index:index percent:percent title:title];
     }
 }
 
@@ -337,17 +338,14 @@
     isAnimating = YES;
     UITouch *touch = [touches anyObject];
     
-    // 取得当前触点的theta值
     mAbsoluteTheta = [self thetaForTouch:touch onView:self.superview];
     
-    // 计算速度
     NSTimeInterval dragInterval = [mDragBeforeDate timeIntervalSinceNow];
     
-    /*由于theta大于2*PI后自动归零,因此此处需判断是否是在0度前后拖动 */
-    if (fabsf(mAbsoluteTheta - mDragBeforeTheta) > M_PI) {    // 应判断是否#约等于#2PI.
-        if (mAbsoluteTheta > mDragBeforeTheta) {  // 反方向转动
+    if (fabsf(mAbsoluteTheta - mDragBeforeTheta) > M_PI) {
+        if (mAbsoluteTheta > mDragBeforeTheta) {
             mDragSpeed = (mAbsoluteTheta - (mDragBeforeTheta + 2 * M_PI)) / fabs(dragInterval);
-        } else {        // 正向转动
+        } else {
             mDragSpeed = ((mAbsoluteTheta + 2 * M_PI) - mDragBeforeTheta) / fabs(dragInterval);
         }
     } else {

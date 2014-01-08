@@ -14,6 +14,7 @@
 
 @property (nonatomic,strong) NSMutableArray *valueArray;
 @property (nonatomic,strong) NSMutableArray *colorArray;
+@property (nonatomic,strong) NSMutableArray *titleArray;
 @property (nonatomic,strong) NSMutableArray *valueArray2;
 @property (nonatomic,strong) NSMutableArray *colorArray2;
 @property (nonatomic,strong) PieChartView *pieChartView;
