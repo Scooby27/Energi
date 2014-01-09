@@ -59,7 +59,10 @@
     NSString *applianceCodes = [NSString stringWithContentsOfURL:url encoding:1 error:NULL];
     NSArray *codes_groupings = [applianceCodes componentsSeparatedByString:@"\n"];
     
+    BOOL applianceFound = 0;
+    
     for (int j = 0; j < [usersAppliances count]; j++){
+        applianceFound = 0;
         NSString *applianceCode = [usersAppliances objectAtIndex:j];
         for (int i = 1; i < [codes_groupings count]-1; i++){
             NSString *code_grouping = [codes_groupings objectAtIndex:i];
@@ -69,8 +72,11 @@
             
             if ([applianceCode longLongValue] == [nextApplianceCode longLongValue]){
                 [usersAppliances replaceObjectAtIndex:j withObject:nextApplianceGroup];
+                applianceFound = 1;
             }
         }
+        
+        if (!applianceFound){[usersAppliances replaceObjectAtIndex:j withObject:@"Appliance Not Found"];}
     }
     
     
@@ -78,9 +84,11 @@
     // Retrieves the appliance group codes and their respective names.
     url = [NSURL URLWithString:urlString];
     
+    
+    
     NSString *groupCodes = [NSString stringWithContentsOfURL:url encoding:1 error:NULL];
     NSArray *groupCodes_groupNames = [groupCodes componentsSeparatedByString:@"\n"];
-    
+ 
     for (int j = 0; j < [usersAppliances count]; j++){
         NSString *groupCode = [usersAppliances objectAtIndex:j];
         for (int i = 1; i < [groupCodes_groupNames count]-1; i++){
@@ -100,17 +108,31 @@
     self.valueArray = [[NSMutableArray alloc] initWithObjects:nil];
     self.titleArray = [[NSMutableArray alloc] initWithObjects:nil];
     
+    NSMutableArray *seen = [[NSMutableArray alloc] init];
+    BOOL seenFlag = 0;
+    
     for (int i = 0; i < [usersAppliances count]; i++){
+        seenFlag = 0;
         count = 1;
         NSString *group = [usersAppliances objectAtIndex:i];
         group = [group stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+        
+        for (int j = 0; j < [seen count]; j++){
+            if([group isEqualToString:[seen objectAtIndex:j]]){seenFlag = 1; break;}
+        }
+        
+        if (seenFlag){continue;}
+                
+        [seen addObject:group];
+        
         for (int j = 0; j < [usersAppliances count]; j++){
             if (i == j) continue;
+            
             NSString *currentGroup = [usersAppliances objectAtIndex:j];
             currentGroup = [currentGroup stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
             if ([group isEqualToString:currentGroup]){
                 count++;
-                [usersAppliances removeObjectAtIndex:j];
+                [seen addObject:group];
             }
         }
         
