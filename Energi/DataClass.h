@@ -20,6 +20,12 @@
 
 @property (nonatomic, retain) UIViewController* sourceview;
 
+@property (nonatomic,strong) NSMutableArray *valueArray;
+
+@property (nonatomic,strong) NSMutableArray *colorArray;
+
+@property (nonatomic,strong) NSMutableArray *titleArray;
+
 +(DataClass*)getInstance;
 
 @end

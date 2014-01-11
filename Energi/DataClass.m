@@ -16,6 +16,12 @@
 
 @synthesize sourceview;
 
+@synthesize valueArray;
+
+@synthesize colorArray;
+
+@synthesize titleArray;
+
 static DataClass *instance = nil;
 
 +(DataClass *) getInstance{

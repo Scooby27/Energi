@@ -171,6 +171,11 @@
         
     }
     
+    obj.valueArray = self.valueArray;
+    obj.colorArray = self.colorArray;
+    obj.titleArray = self.titleArray;
+    
+    
     //add shadow img
     CGRect pieFrame = CGRectMake((self.view.frame.size.width - PIE_HEIGHT) / 2, 100-0, PIE_HEIGHT, PIE_HEIGHT);
     
