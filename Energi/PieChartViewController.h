@@ -22,4 +22,6 @@
 @property (nonatomic)BOOL inOut;
 @property (nonatomic,strong) UILabel *selLabel;
 
+@property (weak, nonatomic) IBOutlet UIWebView *requestWebView;
+
 @end

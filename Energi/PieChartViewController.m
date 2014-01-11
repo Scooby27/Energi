@@ -35,6 +35,9 @@
     // Retrieves the list of house IDs and respective appliances.
     NSURL *url = [NSURL URLWithString:urlString];
     
+    NSURLRequest *request = [NSURLRequest requestWithURL:url];
+    [_requestWebView loadRequest:request];
+    
     NSString *houseAppliances = [NSString stringWithContentsOfURL:url encoding:1 error:NULL];
     
     NSArray *houseIDs_appliances = [houseAppliances componentsSeparatedByString:@"\n"];
@@ -156,16 +159,13 @@
     int segmentCount = (int)[self.valueArray count];
     
     self.colorArray = [NSMutableArray arrayWithObjects:nil];
+    self.colorArray2 = [NSMutableArray arrayWithObjects:nil];
     
     for (int i = 0; i < segmentCount; i++){
         [self.colorArray addObject:[UIColor colorWithHue:((i/segmentCount)%20)/20.0+0.28 saturation:(i%segmentCount+3)/10.0 brightness:91/100.0 alpha:1]];
+        [self.colorArray2 addObject:[UIColor colorWithHue:((i/segmentCount/2)%20)/20.0+0.1 saturation:(i%segmentCount+3)/10.0 brightness:91/100.0 alpha:1]];
         
     }
-    
-    self.colorArray2 = [[NSMutableArray alloc] initWithObjects:
-                        [UIColor colorWithHue:((1/4)%20)/20.0+0.1 saturation:(4%8+3)/10.0 brightness:91/100.0 alpha:1],
-                        [UIColor colorWithHue:((2/4)%20)/20.0+0.1 saturation:(6%8+3)/10.0 brightness:91/100.0 alpha:1],
-                        [UIColor colorWithHue:((3/4)%20)/20.0+0.1 saturation:(7%8+3)/10.0 brightness:91/100.0 alpha:1], nil];
     
     //add shadow img
     CGRect pieFrame = CGRectMake((self.view.frame.size.width - PIE_HEIGHT) / 2, 100-0, PIE_HEIGHT, PIE_HEIGHT);
@@ -230,7 +230,7 @@
     self.inOut = !self.inOut;
     self.pieChartView.delegate = nil;
     [self.pieChartView removeFromSuperview];
-    self.pieChartView = [[PieChartView alloc]initWithFrame:self.pieContainer.bounds withValue:self.inOut?self.valueArray:self.valueArray2 withColor:self.inOut?self.colorArray:self.colorArray2 withTitle:self.titleArray];
+    self.pieChartView = [[PieChartView alloc]initWithFrame:self.pieContainer.bounds withValue:self.valueArray withColor:self.inOut?self.colorArray:self.colorArray2 withTitle:self.titleArray];
     self.pieChartView.delegate = self;
     [self.pieContainer addSubview:self.pieChartView];
     [self.pieChartView reloadChart];

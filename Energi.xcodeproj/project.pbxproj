@@ -50,6 +50,7 @@
 		4DAA4982185FBBF2002C1E79 /* budget.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DAA4981185FBBF2002C1E79 /* budget.png */; };
 		4DDC4FAE182D641600B76923 /* Default@2x-portrait.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DDC4FAC182D641600B76923 /* Default@2x-portrait.png */; };
 		4DDC4FAF182D641600B76923 /* Default@2x~iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DDC4FAD182D641600B76923 /* Default@2x~iphone.png */; };
+		4DFEA7AB1881CE0A00CD58C4 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DFEA7AA1881CE0A00CD58C4 /* SystemConfiguration.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -129,6 +130,7 @@
 		4DAA4981185FBBF2002C1E79 /* budget.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = budget.png; sourceTree = "<group>"; };
 		4DDC4FAC182D641600B76923 /* Default@2x-portrait.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x-portrait.png"; sourceTree = "<group>"; };
 		4DDC4FAD182D641600B76923 /* Default@2x~iphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x~iphone.png"; sourceTree = "<group>"; };
+		4DFEA7AA1881CE0A00CD58C4 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,6 +138,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4DFEA7AB1881CE0A00CD58C4 /* SystemConfiguration.framework in Frameworks */,
 				4DA73AF91861D359009AEBED /* FacebookSDK.framework in Frameworks */,
 				4DA3F003181B09DC007515C9 /* CoreGraphics.framework in Frameworks */,
 				4DA3F005181B09DC007515C9 /* UIKit.framework in Frameworks */,
@@ -178,6 +181,7 @@
 		4DA3EFFF181B09DC007515C9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4DFEA7AA1881CE0A00CD58C4 /* SystemConfiguration.framework */,
 				4DA73AF81861D359009AEBED /* FacebookSDK.framework */,
 				4DA3F000181B09DC007515C9 /* Foundation.framework */,
 				4DA3F002181B09DC007515C9 /* CoreGraphics.framework */,

@@ -26,6 +26,23 @@
 //                                          [self sessionStateChanged:session state:state error:error];
 //                                      }];
 //    }
+    // Initialize Reachability
+//    Reachability *reachability = [Reachability reachabilityWithHostname:@"www.google.com"];
+//    reachability.reachableBlock = ^(Reachability *reachability) {
+//        NSLog(@"Network is reachable.");
+//    };
+//    reachability.unreachableBlock = ^(Reachability *reachability) {
+//        NSLog(@"Network is unreachable.");
+//    };
+//    // Start Monitoring
+//    [reachability startNotifier];
+//    // Initialize View Controller
+//    self.viewController = [[EnergiViewController alloc] initWithNibName:@"EnergiViewController" bundle:nil];
+//    // Initialize Window
+//    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+//    // Configure Window
+//    [self.window setRootViewController:self.viewController];
+//    [self.window makeKeyAndVisible];
     return YES;
 }
     
