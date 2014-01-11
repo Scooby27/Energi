@@ -828,8 +828,8 @@
         <!--Bar Chart View Controller-->
         <scene sceneID="d7N-aH-fXC">
             <objects>
-                <viewController id="QbF-0o-h5Q" userLabel="Bar Chart View Controller" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="HAp-Bd-Qbq">
+                <viewController id="QbF-0o-h5Q" userLabel="Bar Chart View Controller" customClass="BarChartViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="HAp-Bd-Qbq" customClass="DisplayView">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
@@ -931,8 +931,8 @@
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="i9g-NP-BoT"/>
-        <segue reference="Nc9-Au-rOK"/>
-        <segue reference="FSN-rg-VPU"/>
-        <segue reference="5AF-rY-1z7"/>
+        <segue reference="H26-1U-Pr4"/>
+        <segue reference="Z2r-Tq-io6"/>
+        <segue reference="A5d-X6-xb4"/>
     </inferredMetricsTieBreakers>
 </document>

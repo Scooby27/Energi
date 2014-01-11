@@ -51,6 +51,12 @@
 		4DDC4FAE182D641600B76923 /* Default@2x-portrait.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DDC4FAC182D641600B76923 /* Default@2x-portrait.png */; };
 		4DDC4FAF182D641600B76923 /* Default@2x~iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DDC4FAD182D641600B76923 /* Default@2x~iphone.png */; };
 		4DFEA7AB1881CE0A00CD58C4 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DFEA7AA1881CE0A00CD58C4 /* SystemConfiguration.framework */; };
+		4DFEA7AE1881DAB700CD58C4 /* ECGraph.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DFEA7AD1881DAB700CD58C4 /* ECGraph.m */; };
+		4DFEA7B51881DB0300CD58C4 /* ECGraphItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DFEA7B01881DB0300CD58C4 /* ECGraphItem.m */; };
+		4DFEA7B61881DB0300CD58C4 /* ECGraphLine.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DFEA7B21881DB0300CD58C4 /* ECGraphLine.m */; };
+		4DFEA7B71881DB0300CD58C4 /* ECGraphPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DFEA7B41881DB0300CD58C4 /* ECGraphPoint.m */; };
+		4DFEA7BA1881DB2B00CD58C4 /* ECCommon.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DFEA7B91881DB2B00CD58C4 /* ECCommon.m */; };
+		4DFEA7BD1881E47A00CD58C4 /* DisplayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DFEA7BC1881E47A00CD58C4 /* DisplayView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -131,6 +137,18 @@
 		4DDC4FAC182D641600B76923 /* Default@2x-portrait.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x-portrait.png"; sourceTree = "<group>"; };
 		4DDC4FAD182D641600B76923 /* Default@2x~iphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x~iphone.png"; sourceTree = "<group>"; };
 		4DFEA7AA1881CE0A00CD58C4 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		4DFEA7AC1881DAB700CD58C4 /* ECGraph.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ECGraph.h; path = "../../../../../../Downloads/ECGraphSample5-21/ecgraph/ ecgraph/Core/ECGraph/ECGraph.h"; sourceTree = "<group>"; };
+		4DFEA7AD1881DAB700CD58C4 /* ECGraph.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ECGraph.m; path = "../../../../../../Downloads/ECGraphSample5-21/ecgraph/ ecgraph/Core/ECGraph/ECGraph.m"; sourceTree = "<group>"; };
+		4DFEA7AF1881DB0300CD58C4 /* ECGraphItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ECGraphItem.h; path = "../../../../../../Downloads/ECGraphSample5-21/ecgraph/ ecgraph/Core/ECGraph/ECGraphItem.h"; sourceTree = "<group>"; };
+		4DFEA7B01881DB0300CD58C4 /* ECGraphItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ECGraphItem.m; path = "../../../../../../Downloads/ECGraphSample5-21/ecgraph/ ecgraph/Core/ECGraph/ECGraphItem.m"; sourceTree = "<group>"; };
+		4DFEA7B11881DB0300CD58C4 /* ECGraphLine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ECGraphLine.h; path = "../../../../../../Downloads/ECGraphSample5-21/ecgraph/ ecgraph/Core/ECGraph/ECGraphLine.h"; sourceTree = "<group>"; };
+		4DFEA7B21881DB0300CD58C4 /* ECGraphLine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ECGraphLine.m; path = "../../../../../../Downloads/ECGraphSample5-21/ecgraph/ ecgraph/Core/ECGraph/ECGraphLine.m"; sourceTree = "<group>"; };
+		4DFEA7B31881DB0300CD58C4 /* ECGraphPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ECGraphPoint.h; path = "../../../../../../Downloads/ECGraphSample5-21/ecgraph/ ecgraph/Core/ECGraph/ECGraphPoint.h"; sourceTree = "<group>"; };
+		4DFEA7B41881DB0300CD58C4 /* ECGraphPoint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ECGraphPoint.m; path = "../../../../../../Downloads/ECGraphSample5-21/ecgraph/ ecgraph/Core/ECGraph/ECGraphPoint.m"; sourceTree = "<group>"; };
+		4DFEA7B81881DB2B00CD58C4 /* ECCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ECCommon.h; path = "../../../../../../Downloads/ECGraphSample5-21/ecgraph/ ecgraph/Core/ECCommon.h"; sourceTree = "<group>"; };
+		4DFEA7B91881DB2B00CD58C4 /* ECCommon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ECCommon.m; path = "../../../../../../Downloads/ECGraphSample5-21/ecgraph/ ecgraph/Core/ECCommon.m"; sourceTree = "<group>"; };
+		4DFEA7BB1881E47A00CD58C4 /* DisplayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DisplayView.h; path = "../../../../../../Downloads/ECGraphSample5-21/ecgraph/ ecgraph/Sample/Classes/DisplayView.h"; sourceTree = "<group>"; };
+		4DFEA7BC1881E47A00CD58C4 /* DisplayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DisplayView.m; path = "../../../../../../Downloads/ECGraphSample5-21/ecgraph/ ecgraph/Sample/Classes/DisplayView.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -200,6 +218,8 @@
 				4DA3F010181B09DC007515C9 /* EnergiAppDelegate.m */,
 				4DAA497C185F93B7002C1E79 /* DataClass.h */,
 				4DAA497D185F93B7002C1E79 /* DataClass.m */,
+				4DFEA7BB1881E47A00CD58C4 /* DisplayView.h */,
+				4DFEA7BC1881E47A00CD58C4 /* DisplayView.m */,
 				4DA3F012181B09DC007515C9 /* Main_iPhone.storyboard */,
 				4DA3F015181B09DC007515C9 /* Main_iPad.storyboard */,
 				4DA73AFA1861D54E009AEBED /* ShareViewController.h */,
@@ -218,6 +238,16 @@
 				4D4D45481833F40100329B9B /* LeftToRightStoryboardSegue.m */,
 				4D4D45441833F31400329B9B /* RightToLeftStoryboardSegue.h */,
 				4D4D45451833F31400329B9B /* RightToLeftStoryboardSegue.m */,
+				4DFEA7B81881DB2B00CD58C4 /* ECCommon.h */,
+				4DFEA7B91881DB2B00CD58C4 /* ECCommon.m */,
+				4DFEA7AC1881DAB700CD58C4 /* ECGraph.h */,
+				4DFEA7AD1881DAB700CD58C4 /* ECGraph.m */,
+				4DFEA7AF1881DB0300CD58C4 /* ECGraphItem.h */,
+				4DFEA7B01881DB0300CD58C4 /* ECGraphItem.m */,
+				4DFEA7B11881DB0300CD58C4 /* ECGraphLine.h */,
+				4DFEA7B21881DB0300CD58C4 /* ECGraphLine.m */,
+				4DFEA7B31881DB0300CD58C4 /* ECGraphPoint.h */,
+				4DFEA7B41881DB0300CD58C4 /* ECGraphPoint.m */,
 				4DA3F01B181B09DD007515C9 /* Images.xcassets */,
 				4DA3F007181B09DC007515C9 /* Supporting Files */,
 			);
@@ -415,16 +445,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4DFEA7BA1881DB2B00CD58C4 /* ECCommon.m in Sources */,
 				4D4D454C1833F9A700329B9B /* SettingsTableViewController.m in Sources */,
+				4DFEA7B61881DB0300CD58C4 /* ECGraphLine.m in Sources */,
+				4DFEA7B51881DB0300CD58C4 /* ECGraphItem.m in Sources */,
 				4DA3F011181B09DC007515C9 /* EnergiAppDelegate.m in Sources */,
 				4DA73B0D18624570009AEBED /* RotatedView.m in Sources */,
 				4D4D45491833F40100329B9B /* LeftToRightStoryboardSegue.m in Sources */,
 				4DA63C391858C38900F19416 /* BudgetViewController.m in Sources */,
 				4DA73B0B18624570009AEBED /* PieChartView.m in Sources */,
+				4DFEA7BD1881E47A00CD58C4 /* DisplayView.m in Sources */,
 				4DA3F00D181B09DC007515C9 /* main.m in Sources */,
 				4D4D45461833F31400329B9B /* RightToLeftStoryboardSegue.m in Sources */,
 				4DAA497E185F93B7002C1E79 /* DataClass.m in Sources */,
+				4DFEA7B71881DB0300CD58C4 /* ECGraphPoint.m in Sources */,
 				4DA73AFC1861D54E009AEBED /* ShareViewController.m in Sources */,
+				4DFEA7AE1881DAB700CD58C4 /* ECGraph.m in Sources */,
 				4DA73B13186245F4009AEBED /* PieChartViewController.m in Sources */,
 				4D01FAF2186393180020311C /* BarChartViewController.m in Sources */,
 				4DA73B0C18624570009AEBED /* RenderView.m in Sources */,

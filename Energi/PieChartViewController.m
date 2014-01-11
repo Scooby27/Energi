@@ -35,7 +35,7 @@
     // Retrieves the list of house IDs and respective appliances.
     NSURL *url = [NSURL URLWithString:urlString];
     
-    NSURLRequest *request = [NSURLRequest requestWithURL:url];
+    NSURLRequest *request = [NSURLRequest requestWithURL:url cachePolicy:0 timeoutInterval:10];
     [_requestWebView loadRequest:request];
     
     NSString *houseAppliances = [NSString stringWithContentsOfURL:url encoding:1 error:NULL];
@@ -58,6 +58,9 @@
     urlString = @"http://textuploader.com/1rer/raw";
     // Retrieves the appliance codes and their respective grouping.
     url = [NSURL URLWithString:urlString];
+    
+    request = [NSURLRequest requestWithURL:url cachePolicy:0 timeoutInterval:10];
+    [_requestWebView loadRequest:request];
     
     NSString *applianceCodes = [NSString stringWithContentsOfURL:url encoding:1 error:NULL];
     NSArray *codes_groupings = [applianceCodes componentsSeparatedByString:@"\n"];
@@ -87,7 +90,8 @@
     // Retrieves the appliance group codes and their respective names.
     url = [NSURL URLWithString:urlString];
     
-    
+    request = [NSURLRequest requestWithURL:url cachePolicy:0 timeoutInterval:10];
+    [_requestWebView loadRequest:request];
     
     NSString *groupCodes = [NSString stringWithContentsOfURL:url encoding:1 error:NULL];
     NSArray *groupCodes_groupNames = [groupCodes componentsSeparatedByString:@"\n"];

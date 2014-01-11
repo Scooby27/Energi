@@ -7,6 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ECGraph.h"
+#import "ECCommon.h"
+#import "ECGraphPoint.h"
+#import "ECGraphLine.h"
+#import "ECGraphItem.h"
+
+
 
 @interface BarChartViewController : UIViewController
 
