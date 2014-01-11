@@ -376,11 +376,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../../../../../Downloads/ECGraphSample5-21/ecgraph/ ecgraph/Core/ECGraph/ECGraph.m"
-            timestampString = "411172049.028219"
+            timestampString = "411173499.124423"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "619"
-            endingLineNumber = "619"
+            startingLineNumber = "617"
+            endingLineNumber = "617"
             landmarkName = "-drawHistogramWithItems:lineWidth:color:"
             landmarkType = "5">
          </BreakpointContent>
@@ -392,11 +392,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../../../../../Downloads/ECGraphSample5-21/ecgraph/ ecgraph/Core/ECGraph/ECGraph.m"
-            timestampString = "411172049.028219"
+            timestampString = "411173499.124423"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "624"
-            endingLineNumber = "624"
+            startingLineNumber = "622"
+            endingLineNumber = "622"
             landmarkName = "-drawHistogramWithItems:lineWidth:color:"
             landmarkType = "5">
          </BreakpointContent>
