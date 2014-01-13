@@ -29,6 +29,16 @@
     }else{ destination = (UIViewController *)self.destinationViewController;}
         // Otherwise it is the destination view.
     
+//    NSString *destinationstr = [NSString stringWithFormat:@"%@", destination];
+//    components = [destinationstr componentsSeparatedByString:@" "];
+//    NSString *destinationviewname = [components objectAtIndex:0];
+//    // Variables used to determine the orientation of the destination view.
+//    
+//    if ([destinationviewname isEqualToString:@"<BarChartViewController:"]){
+//        destination.shouldAutorotate;
+//        
+//    }
+
     CGRect sourceFrame = source.view.frame;
     sourceFrame.origin.x = -sourceFrame.size.width;
     

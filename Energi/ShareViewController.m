@@ -15,6 +15,16 @@
 
 @implementation ShareViewController
 
+- (NSUInteger)supportedInterfaceOrientations
+{
+    return UIInterfaceOrientationMaskPortrait;
+}
+
+- (BOOL)shouldAutorotate
+{
+    return YES;
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];

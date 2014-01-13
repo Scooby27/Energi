@@ -7,9 +7,18 @@
 //
 
 #import "MenuViewController.h"
-#import "SettingsTableViewController.h"
 
 @implementation MenuViewController
+
+- (NSUInteger)supportedInterfaceOrientations
+{
+    return UIInterfaceOrientationMaskPortrait;
+}
+
+- (BOOL)shouldAutorotate
+{
+    return YES;
+}
 
 - (void)viewDidLoad
 {
@@ -23,24 +32,4 @@
     // Dispose of any resources that can be recreated.
 }
 
--(NSUInteger)supportedInterfaceOrientations
-{
-    return UIInterfaceOrientationMaskAll;
-    // Allows all orientations to be supported.
-}
--(IBAction)unwindToMenu:(UIStoryboardSegue*)sender{
-    
-    UIViewController* sourceViewController = sender.sourceViewController;
-    
-    if ([sourceViewController isKindOfClass:[SettingsTableViewController class]]){
-        NSLog(@"Tableeeeeeeeee");
-    }
-    
-}
-
-
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
-    // Return YES for supported orientations
-}
 @end

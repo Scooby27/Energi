@@ -11,6 +11,15 @@
 
 @implementation BudgetViewController
 
+- (NSUInteger)supportedInterfaceOrientations
+{
+    return UIInterfaceOrientationMaskPortrait;
+}
+
+- (BOOL)shouldAutorotate
+{
+    return YES;
+}
 
 - (void)viewDidLoad
 {

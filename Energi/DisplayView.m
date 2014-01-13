@@ -29,8 +29,8 @@
     
     // Drawing code
 	CGContextRef _context = UIGraphicsGetCurrentContext();
-    ECGraph *graph = [[ECGraph alloc] initWithFrame:CGRectMake(7,-75, 330, 310)
-                                        withContext:_context isPortrait:NO];
+    ECGraph *graph = [[ECGraph alloc] initWithFrame:CGRectMake(0,-75, 330, 310)
+                                        withContext:_context isPortrait:YES];
     
     DataClass *obj = [DataClass getInstance];
     

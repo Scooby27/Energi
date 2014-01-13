@@ -10,6 +10,7 @@
 		4D01FAEB186343210020311C /* bar chart.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D01FAEA186343210020311C /* bar chart.png */; };
 		4D01FAED186345F50020311C /* pie chart.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D01FAEC186345F50020311C /* pie chart.png */; };
 		4D01FAF2186393180020311C /* BarChartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D01FAF1186393180020311C /* BarChartViewController.m */; };
+		4D322B77188476940027ED47 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D322B76188476940027ED47 /* MenuViewController.m */; };
 		4D4D45461833F31400329B9B /* RightToLeftStoryboardSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D4D45451833F31400329B9B /* RightToLeftStoryboardSegue.m */; };
 		4D4D45491833F40100329B9B /* LeftToRightStoryboardSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D4D45481833F40100329B9B /* LeftToRightStoryboardSegue.m */; };
 		4D4D454C1833F9A700329B9B /* SettingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D4D454B1833F9A700329B9B /* SettingsTableViewController.m */; };
@@ -74,6 +75,8 @@
 		4D01FAEC186345F50020311C /* pie chart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pie chart.png"; sourceTree = "<group>"; };
 		4D01FAF0186393180020311C /* BarChartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BarChartViewController.h; sourceTree = "<group>"; };
 		4D01FAF1186393180020311C /* BarChartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BarChartViewController.m; sourceTree = "<group>"; };
+		4D322B75188476940027ED47 /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
+		4D322B76188476940027ED47 /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
 		4D4D45441833F31400329B9B /* RightToLeftStoryboardSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RightToLeftStoryboardSegue.h; sourceTree = "<group>"; };
 		4D4D45451833F31400329B9B /* RightToLeftStoryboardSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RightToLeftStoryboardSegue.m; sourceTree = "<group>"; };
 		4D4D45471833F40100329B9B /* LeftToRightStoryboardSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeftToRightStoryboardSegue.h; sourceTree = "<group>"; };
@@ -247,6 +250,8 @@
 				4DA73B12186245F4009AEBED /* PieChartViewController.m */,
 				4DA3F018181B09DC007515C9 /* EnergiViewController.h */,
 				4DA3F019181B09DC007515C9 /* EnergiViewController.m */,
+				4D322B75188476940027ED47 /* MenuViewController.h */,
+				4D322B76188476940027ED47 /* MenuViewController.m */,
 				4DA63C371858C38900F19416 /* BudgetViewController.h */,
 				4DA63C381858C38900F19416 /* BudgetViewController.m */,
 				4D4D454A1833F9A700329B9B /* SettingsTableViewController.h */,
@@ -458,6 +463,7 @@
 				4DEE83321882053700E5B77F /* ECGraphItem.m in Sources */,
 				4DA3F011181B09DC007515C9 /* EnergiAppDelegate.m in Sources */,
 				4DA73B0D18624570009AEBED /* RotatedView.m in Sources */,
+				4D322B77188476940027ED47 /* MenuViewController.m in Sources */,
 				4D4D45491833F40100329B9B /* LeftToRightStoryboardSegue.m in Sources */,
 				4DEE832F1882053700E5B77F /* DisplayView.m in Sources */,
 				4DA63C391858C38900F19416 /* BudgetViewController.m in Sources */,

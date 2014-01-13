@@ -7,12 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <QuartzCore/QuartzCore.h>
 
 @interface MenuViewController : UIViewController
-
--(IBAction)toSettings;
-
--(IBAction)unwindToMenu:(UIStoryboardSegue*)sender;
 
 @end
