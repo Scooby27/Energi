@@ -29,7 +29,7 @@
     
     // Drawing code
 	CGContextRef _context = UIGraphicsGetCurrentContext();
-    ECGraph *graph = [[ECGraph alloc] initWithFrame:CGRectMake(0,-75, 330, 310)
+    ECGraph *graph = [[ECGraph alloc] initWithFrame:CGRectMake(7,100, 330, 310)
                                         withContext:_context isPortrait:YES];
     
     DataClass *obj = [DataClass getInstance];
@@ -39,6 +39,7 @@
     NSArray *titleArray = obj.titleArray;
     
     int categories_count = (int)[valueArray count];
+    int barLength = 175/categories_count;
     int total_value = 0;
     
     NSMutableArray *items = [[NSMutableArray alloc] initWithObjects:nil];
@@ -56,7 +57,7 @@
         ECGraphItem *item = [[ECGraphItem alloc] init];
         item.isPercentage = YES;
         item.yValue = per;
-        item.width = 175/categories_count;
+        item.width = barLength;
         item.name = [titleArray objectAtIndex:i];
         item.color = [colorArray objectAtIndex:i];
         

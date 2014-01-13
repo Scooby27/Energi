@@ -92,11 +92,11 @@
             }
         }
         
-        if (!applianceFound){[usersAppliances replaceObjectAtIndex:j withObject:@"Appliance Not Found"];}
+        if (!applianceFound){[usersAppliances replaceObjectAtIndex:j withObject:@"Unknown"];}
     }
     
     
-    urlString = @"http://textuploader.com/1re0/raw";
+    urlString = @"http://textuploader.com/10dr/raw";
     // Retrieves the appliance group codes and their respective names.
     url = [NSURL URLWithString:urlString];
     

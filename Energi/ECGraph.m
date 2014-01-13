@@ -15,8 +15,8 @@
 
 #define PORTRAIT_SCREEN_WIDTH 320
 #define PORTRAIT_SCREEN_HEIGHT 480
-#define LANDSPACE_SCREEN_WIDTH 480
-#define LANDSPACE_SCREEN_HEIGHT 320
+#define LANDSCAPE_SCREEN_WIDTH 480
+#define LANDSCAPE_SCREEN_HEIGHT 320
 
 #define XSPACEING 50
 #define YSPACEING 30
@@ -51,7 +51,7 @@ static inline double radians(double degrees){
 /*
  Draw Words*/
 -(void)drawWords:(NSString *)words AtPoint:(CGPoint)point color:(UIColor *)color;
--(void)drawXYAxixTitleWithColor:(UIColor *)color;
+-(void)drawXYAxisTitleWithColor:(UIColor *)color;
 /*
  Get Duration Of Days Or Hours*/
 -(int)getDaysFrom:(NSDate *)beiginDate To:(NSDate *)endDate;
@@ -145,8 +145,6 @@ static inline double radians(double degrees){
 {	
 	float radius = diameter * 0.5;
 	CGRect oval = {center.x - radius,center.y - radius,diameter,diameter};
-	//CGContextSetFillColor(context, CGColorGetComponents([fillColor CGColor]));
-	//CGContextSetRGBFillColor(context, 1.0, 1.0, 1.0, 1.0);
 	[fillColor setFill];
 	CGContextAddEllipseInRect(_context, oval);
 	CGContextFillPath(_context);
@@ -176,9 +174,7 @@ static inline double radians(double degrees){
 	CGContextClosePath(_context);
 	[fillColor setFill];
 	[stockeColor setStroke];
-	//CGContextRotateCTM(context,angle);
 	CGContextDrawPath(_context, kCGPathFillStroke);
-	//CGContextRotateCTM(context,-angle);
 }
 
 -(void)drawSquareAtPoint:(CGPoint)center withDiameter:(float)diameter fillColor:(UIColor *)fillColor stockeColor:(UIColor *)stockeColor rotate:(float)angle
@@ -195,7 +191,7 @@ static inline double radians(double degrees){
 -(void)drawWords:(NSString *)words AtPoint:(CGPoint)point color:(UIColor *)color 
 {
 	[color set];
-    NSDictionary *textAttributes = @{NSFontAttributeName: [UIFont systemFontOfSize:12]};
+    NSDictionary *textAttributes = @{NSFontAttributeName: [UIFont systemFontOfSize:10]};
 	[words drawAtPoint:point withAttributes:textAttributes];
 }
 
@@ -229,10 +225,10 @@ static inline double radians(double degrees){
 	return hours;
 }
 
--(void)drawXYAxixTitleWithColor:(UIColor *)color
+-(void)drawXYAxisTitleWithColor:(UIColor *)color
 {
 	[color set];
-	UILabel *lb_xaxisTitle = [[UILabel alloc] initWithFrame:CGRectMake(_xaxisStart.x , _xaxisStart.y + 20 , _xaxisLength, 18)];
+	UILabel *lb_xaxisTitle = [[UILabel alloc] initWithFrame:CGRectMake(_xaxisStart.x , _xaxisStart.y + 100 , _xaxisLength, 30)];
 	lb_xaxisTitle.text = _xaxisTitle;
 	lb_xaxisTitle.textAlignment = NSTextAlignmentCenter;
 	lb_xaxisTitle.backgroundColor = [UIColor clearColor];
@@ -247,7 +243,7 @@ static inline double radians(double degrees){
 	lb_yaxisTitle.transform = CGAffineTransformMakeRotation(-1.57);
 	[ECCAST(UIView,_delegate) addSubview:lb_yaxisTitle];
 	
-	UILabel *lb_graphicTitle = [[UILabel alloc] initWithFrame:CGRectMake(_xaxisStart.x , _yaxisEnd.y - 20  , _xaxisLength, 18)];
+	UILabel *lb_graphicTitle = [[UILabel alloc] initWithFrame:CGRectMake(_xaxisStart.x , _yaxisEnd.y - 20  , _xaxisLength, 20)];
 	lb_graphicTitle.text = _graphicTitle;
 	lb_graphicTitle.textAlignment = NSTextAlignmentCenter;
 	lb_graphicTitle.backgroundColor = [UIColor clearColor];
@@ -352,7 +348,7 @@ static inline double radians(double degrees){
 	{
 		_context = context;
 		_frame = frame;
-		_graphStatus	= isPortrait ? ECGraphStatusPortrait : ECGraphStatusLandspace;
+		_graphStatus	= isPortrait ? ECGraphStatusPortrait : ECGraphStatusLandscape;
 		_timeFormat	= ECGraphTimeFormat24;
 		_graphMode		= ECGraphModeNormal;
 		_pointType		= ECGraphPointTypeCircle;
@@ -362,8 +358,8 @@ static inline double radians(double degrees){
 		_yaxisDateFormat = @"MM-dd";
 		
 		//get the screen height and width
-		_screenHeight = isPortrait ? PORTRAIT_SCREEN_HEIGHT : LANDSPACE_SCREEN_HEIGHT;
-		_screenWidth = isPortrait ? PORTRAIT_SCREEN_WIDTH : LANDSPACE_SCREEN_WIDTH;
+		_screenHeight = isPortrait ? PORTRAIT_SCREEN_HEIGHT : LANDSCAPE_SCREEN_HEIGHT;
+		_screenWidth = isPortrait ? PORTRAIT_SCREEN_WIDTH : LANDSCAPE_SCREEN_WIDTH;
 		
 		//convert the coordinate left top(0,0) to left bottom(0,0)
 		_xaxisStart = CGPointMake(_frame.origin.x + XAXIS_OFFSET - 1, _screenHeight - _frame.origin.y - YAXIS_OFFSET); //_frame.origin.x + XAXIS_OFFSET - 1 correct x-axis position
@@ -392,7 +388,7 @@ static inline double radians(double degrees){
 	UIRectFill(blockFrame);
 	
 	//draw titles
-	[self drawXYAxixTitleWithColor:[UIColor blackColor]];
+	[self drawXYAxisTitleWithColor:[UIColor blackColor]];
 	//draw X-axis and Y-axis
 	CGContextBeginPath(_context);
 	CGContextSetLineWidth(_context, lineWidth);
@@ -603,7 +599,7 @@ static inline double radians(double degrees){
 	UIRectFill(blockFrame);
 	
 	//draw titles
-	[self drawXYAxixTitleWithColor:[UIColor blackColor]];
+	[self drawXYAxisTitleWithColor:[UIColor blackColor]];
 	//draw X-axis and Y-axis
 	CGContextBeginPath(_context);
 	CGContextSetLineWidth(_context, lineWidth);
@@ -652,7 +648,7 @@ static inline double radians(double degrees){
 	float retainLength = _xaxisLength - itemsLength;
 	_histogramSpacing = (float)retainLength/(itemsCount + 1);
 	_histogramStartX = _xaxisStart.x +_histogramSpacing;
-	
+    
 	for (int i = 0; i < itemsCount; ++i) 
 	{
 		ECGraphItem *item = [items objectAtIndex:i];
@@ -665,6 +661,7 @@ static inline double radians(double degrees){
 {
 	if (index != 0) 
 		_histogramStartX += _histogramSpacing + item.width;
+        
 	CGRect rect = CGRectMake(_histogramStartX, _xaxisStart.y - _ySpacingScale*item.yValue,item.width, _ySpacingScale*item.yValue);
 	[color setFill];
 	[[UIColor blackColor] setStroke];
@@ -673,10 +670,20 @@ static inline double radians(double degrees){
 	[[UIColor blackColor] set];
 	NSString *percentage = [NSString stringWithFormat:@"%.1f%%",item.yValue];
     
-    NSDictionary *textAttributes = @{NSFontAttributeName: [UIFont systemFontOfSize:10]};
+    NSDictionary *textAttributes = @{NSFontAttributeName: [UIFont systemFontOfSize:8]};
     
 	[percentage drawAtPoint:CGPointMake(_histogramStartX,_xaxisStart.y - _ySpacingScale*item.yValue - 15) withAttributes:textAttributes];
-	[self drawWords:item.name AtPoint:CGPointMake(_histogramStartX + item.width/8 ,_xaxisStart.y + 5)  color:[UIColor blackColor]];
+    
+    UILabel *barTitlelbl = [[UILabel alloc] initWithFrame:CGRectMake(_histogramStartX, _xaxisStart.y + 20, item.width, 20)];
+    barTitlelbl.transform = CGAffineTransformMakeRotation(-1.57);
+
+	barTitlelbl.text = item.name;
+	barTitlelbl.textAlignment = NSTextAlignmentRight;
+	barTitlelbl.backgroundColor = [UIColor clearColor];
+	barTitlelbl.font = [UIFont systemFontOfSize:12];
+    barTitlelbl.frame = CGRectMake(barTitlelbl.frame.origin.x, barTitlelbl.frame.origin.y, barTitlelbl.frame.size.width , 100);
+	[ECCAST(UIView,_delegate) addSubview:barTitlelbl];
+    
 }
 
 @end 

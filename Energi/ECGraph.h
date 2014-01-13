@@ -15,7 +15,7 @@
 typedef enum
 {
 	ECGraphStatusPortrait,
-	ECGraphStatusLandspace = 1 << 1
+	ECGraphStatusLandscape = 1 << 1
 }ECGraphStatus;
 
 typedef enum
@@ -92,7 +92,7 @@ typedef enum
 	id<ECGraphDelegate>	_delegate;
 	
 }
-//get a flag to point draw a protrait graphic or a landspace graphic,default is portrait
+//get a flag to point draw a protrait graphic or a landscape graphic,default is portrait
 @property (nonatomic, readonly) ECGraphStatus graphStatus;
 
 /*

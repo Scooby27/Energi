@@ -22,6 +22,8 @@
 
 @synthesize titleArray;
 
+
+
 static DataClass *instance = nil;
 
 +(DataClass *) getInstance{

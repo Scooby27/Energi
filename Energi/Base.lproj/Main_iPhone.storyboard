@@ -832,7 +832,7 @@
                 <viewController id="QbF-0o-h5Q" userLabel="Bar Chart View Controller" customClass="BarChartViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="HAp-Bd-Qbq" customClass="DisplayView">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Copyright © 2013 Energi" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="zDb-UT-ky2">
                                 <rect key="frame" x="20" y="538" width="280" height="30"/>
@@ -883,7 +883,7 @@
                                 </items>
                             </navigationBar>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="u3x-PK-NbV">
-                                <rect key="frame" x="281" y="472" width="39" height="96"/>
+                                <rect key="frame" x="250" y="513" width="70" height="55"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                 <state key="normal" image="pie chart.png">
@@ -931,9 +931,9 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="5AF-rY-1z7"/>
+        <segue reference="A5d-X6-xb4"/>
+        <segue reference="Phj-HF-mtU"/>
+        <segue reference="Z2r-Tq-io6"/>
         <segue reference="i9g-NP-BoT"/>
-        <segue reference="Nc9-Au-rOK"/>
-        <segue reference="tz6-a2-cwn"/>
     </inferredMetricsTieBreakers>
 </document>
