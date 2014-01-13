@@ -596,7 +596,6 @@ static inline double radians(double degrees){
 
 -(void)drawHistogramWithItems:(NSArray *)items lineWidth:(int)lineWidth color:(UIColor *)color
 {
-	NSLog(@"%@",@"begin draw x-axis and y-axis");
 	
 	//draw background
 	CGRect blockFrame = CGRectMake(_yaxisEnd.x,_yaxisEnd.y,_xaxisLength,_yaxisLength);

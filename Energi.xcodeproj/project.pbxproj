@@ -177,6 +177,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4D322B741884669E0027ED47 /* BarChartView */ = {
+			isa = PBXGroup;
+			children = (
+				4DEE83231882053700E5B77F /* DisplayView.h */,
+				4DEE83241882053700E5B77F /* DisplayView.m */,
+				4DEE83251882053700E5B77F /* ECCommon.h */,
+				4DEE83261882053700E5B77F /* ECCommon.m */,
+				4DEE83271882053700E5B77F /* ECGraph.h */,
+				4DEE83281882053700E5B77F /* ECGraph.m */,
+				4DEE83291882053700E5B77F /* ECGraphItem.h */,
+				4DEE832A1882053700E5B77F /* ECGraphItem.m */,
+				4DEE832B1882053700E5B77F /* ECGraphLine.h */,
+				4DEE832C1882053700E5B77F /* ECGraphLine.m */,
+				4DEE832D1882053700E5B77F /* ECGraphPoint.h */,
+				4DEE832E1882053700E5B77F /* ECGraphPoint.m */,
+			);
+			name = BarChartView;
+			sourceTree = "<group>";
+		};
 		4DA3EFF4181B09DC007515C9 = {
 			isa = PBXGroup;
 			children = (
@@ -212,8 +231,8 @@
 		4DA3F006181B09DC007515C9 /* Energi */ = {
 			isa = PBXGroup;
 			children = (
-				4DA73B0018624570009AEBED /* ChartView */,
-				4DA73B0718624570009AEBED /* Images */,
+				4D322B741884669E0027ED47 /* BarChartView */,
+				4DA73B0018624570009AEBED /* PieChartView */,
 				4DA3F00F181B09DC007515C9 /* EnergiAppDelegate.h */,
 				4DA3F010181B09DC007515C9 /* EnergiAppDelegate.m */,
 				4DAA497C185F93B7002C1E79 /* DataClass.h */,
@@ -236,18 +255,6 @@
 				4D4D45481833F40100329B9B /* LeftToRightStoryboardSegue.m */,
 				4D4D45441833F31400329B9B /* RightToLeftStoryboardSegue.h */,
 				4D4D45451833F31400329B9B /* RightToLeftStoryboardSegue.m */,
-				4DEE83231882053700E5B77F /* DisplayView.h */,
-				4DEE83241882053700E5B77F /* DisplayView.m */,
-				4DEE83251882053700E5B77F /* ECCommon.h */,
-				4DEE83261882053700E5B77F /* ECCommon.m */,
-				4DEE83271882053700E5B77F /* ECGraph.h */,
-				4DEE83281882053700E5B77F /* ECGraph.m */,
-				4DEE83291882053700E5B77F /* ECGraphItem.h */,
-				4DEE832A1882053700E5B77F /* ECGraphItem.m */,
-				4DEE832B1882053700E5B77F /* ECGraphLine.h */,
-				4DEE832C1882053700E5B77F /* ECGraphLine.m */,
-				4DEE832D1882053700E5B77F /* ECGraphPoint.h */,
-				4DEE832E1882053700E5B77F /* ECGraphPoint.m */,
 				4DA3F01B181B09DD007515C9 /* Images.xcassets */,
 				4DA3F007181B09DC007515C9 /* Supporting Files */,
 			);
@@ -257,6 +264,7 @@
 		4DA3F007181B09DC007515C9 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				4DA73B0718624570009AEBED /* Images */,
 				4DAA497F185F9938002C1E79 /* background.png */,
 				4D01FAEA186343210020311C /* bar chart.png */,
 				4D01FAEC186345F50020311C /* pie chart.png */,
@@ -303,7 +311,7 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		4DA73B0018624570009AEBED /* ChartView */ = {
+		4DA73B0018624570009AEBED /* PieChartView */ = {
 			isa = PBXGroup;
 			children = (
 				4DA73B0118624570009AEBED /* PieChartView.h */,
@@ -313,6 +321,7 @@
 				4DA73B0518624570009AEBED /* RotatedView.h */,
 				4DA73B0618624570009AEBED /* RotatedView.m */,
 			);
+			name = PieChartView;
 			path = ChartView;
 			sourceTree = "<group>";
 		};
