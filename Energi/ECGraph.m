@@ -422,7 +422,6 @@ static inline double radians(double degrees){
 			int durationHours = [self getXHoursFromLines:lines];
 			_xSpacingLength = (float)_xaxisLength/_xSpacing;
 			
-			//sample:50%6 = 2 need change 6 to 10
 			while (_xSpacing%durationHours != 0) 
 			{
 				durationHours++;
@@ -626,7 +625,7 @@ static inline double radians(double degrees){
 	ECGraphItem *item = [items objectAtIndex:0];
 	if (item.isPercentage) {
 		int max = 100;
-		_ySpacingScale = (float)_yaxisLength/max;  //1 present how long distance
+		_ySpacingScale = (float)_yaxisLength/max;
 		_ySpacingLength = (float)max/YSTEPS_COUNT;
 		for (int i = 1; i <= YSTEPS_COUNT; ++i) 
 		{
@@ -655,6 +654,7 @@ static inline double radians(double degrees){
 		UIColor *color = item.color?item.color:[self getRandomColor];
 		[self drawHistogramWithItem:item index:i color:color];
 	}
+    
 }
 
 -(void)drawHistogramWithItem:(ECGraphItem *)item index:(int)index color:(UIColor *)color
@@ -662,9 +662,9 @@ static inline double radians(double degrees){
 	if (index != 0) 
 		_histogramStartX += _histogramSpacing + item.width;
         
-	CGRect rect = CGRectMake(_histogramStartX, _xaxisStart.y - _ySpacingScale*item.yValue,item.width, _ySpacingScale*item.yValue);
+	CGRect rect = CGRectMake(_histogramStartX, _xaxisStart.y - _ySpacingScale*item.yValue - 1,item.width, _ySpacingScale*item.yValue);
 	[color setFill];
-	[[UIColor blackColor] setStroke];
+	[[UIColor clearColor] setStroke];
 	CGContextAddRect(_context,rect);
 	CGContextDrawPath(_context, kCGPathFillStroke);
 	[[UIColor blackColor] set];
@@ -681,7 +681,7 @@ static inline double radians(double degrees){
 	barTitlelbl.textAlignment = NSTextAlignmentRight;
 	barTitlelbl.backgroundColor = [UIColor clearColor];
 	barTitlelbl.font = [UIFont systemFontOfSize:12];
-    barTitlelbl.frame = CGRectMake(barTitlelbl.frame.origin.x, barTitlelbl.frame.origin.y, barTitlelbl.frame.size.width , 100);
+    barTitlelbl.frame = CGRectMake(barTitlelbl.frame.origin.x, _xaxisStart.y + item.width/6, barTitlelbl.frame.size.width , 100);
 	[ECCAST(UIView,_delegate) addSubview:barTitlelbl];
     
 }

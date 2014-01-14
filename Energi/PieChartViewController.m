@@ -176,8 +176,8 @@
     self.colorArray2 = [NSMutableArray arrayWithObjects:nil];
     
     for (int i = 0; i < segmentCount; i++){
-        [self.colorArray addObject:[UIColor colorWithHue:((i/segmentCount)%20)/20.0+0.28 saturation:(i%segmentCount+3)/10.0 brightness:91/100.0 alpha:1]];
-        [self.colorArray2 addObject:[UIColor colorWithHue:((i/segmentCount/2)%20)/20.0+0.1 saturation:(i%segmentCount+3)/10.0 brightness:91/100.0 alpha:1]];
+        [self.colorArray addObject:[UIColor colorWithHue:((3*i/segmentCount)%20)/20.0+0.28 saturation:(3*i%segmentCount+3)/10.0 brightness:91/100.0 alpha:1]];
+        [self.colorArray2 addObject:[UIColor colorWithHue:((3*i/segmentCount/2)%20)/20.0+0.1 saturation:(3*i%segmentCount+3)/10.0 brightness:91/100.0 alpha:1]];
         
     }
     
