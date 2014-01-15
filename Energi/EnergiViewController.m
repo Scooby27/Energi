@@ -295,6 +295,31 @@
     // Keyboard disappears if the user taps elsewhere on the screen.
 }
 
+- (IBAction)retrieveData:(id)sender{
+    
+   // NSString *getDataURL = @"https://raw2.github.com/Scooby27/Energi/master/Server/json.php";
+    NSString *getDataURL = @"http://conkave.com/iosdemos/json.php";
+    NSURL *url = [NSURL URLWithString:getDataURL];
+    NSData *data = [NSData dataWithContentsOfURL:url];
+    
+   
+    
+    _json = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
+    
+    _homes = [[NSMutableArray alloc] init];
+    NSLog(@"%lu, %lu", (unsigned long)[_json count], (unsigned long)_json.count);
+    
+    for(int i = 0; i < [_json count]; i++){
+        
+        NSString *homeid = [[_json objectAtIndex:i]objectForKey:@"homeid"];
+        NSString *type = [[_json objectAtIndex:i]objectForKey:@"type"];
+        NSString *location = [[_json objectAtIndex:i]objectForKey:@"location"];
+        NSString *partof = [[_json objectAtIndex:i]objectForKey:@"partof"];
+        NSString *detail = [[_json objectAtIndex:i]objectForKey:@"detail"];
+        
+        NSLog(@"homeid:%@\ntype:%@\nlocation:%@\npartof:%@\ndetail:%@", homeid, type, location, partof, detail);
+    }
+}
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
     // Return YES for supported orientations

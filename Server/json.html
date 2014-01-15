@@ -1,9 +1,14 @@
+<html>
+<head>
+<title>Online PHP Script Execution</title>
+</head>
+<body>
 <?php
- 
+    
   	/***************************************************************
-		Description: 	City data in JSON.
-		Developer:	Vishal Kurup
-	***************************************************************/
+     Description: 	City data in JSON.
+     Developer:	Vishal Kurup
+     ***************************************************************/
 	
 	$host = "129.215.24.206"; //Your database host server
 	$db = "ideal"; //Your database name
@@ -15,7 +20,7 @@
 	//Check to see if we can connect to the server
 	if(!$connection)
 	{
-		die("Database server connection failed.");	
+		die("Database server connection failed.");
 	}
 	else
 	{
@@ -37,7 +42,7 @@
 			//Loop through all our records and add them to our array
 			while($r = mysql_fetch_assoc($resultset))
 			{
-				$records[] = $r;		
+				$records[] = $r;
 			}
 			
 			//Output the data as JSON
@@ -47,5 +52,9 @@
 		
 	}
 	
- 
-?>
+    
+    ?>
+</body>
+</html>
+
+
