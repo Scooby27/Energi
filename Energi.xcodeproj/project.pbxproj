@@ -49,6 +49,9 @@
 		4DAA497E185F93B7002C1E79 /* DataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DAA497D185F93B7002C1E79 /* DataClass.m */; };
 		4DAA4980185F9938002C1E79 /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DAA497F185F9938002C1E79 /* background.png */; };
 		4DAA4982185FBBF2002C1E79 /* budget.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DAA4981185FBBF2002C1E79 /* budget.png */; };
+		4DAA8D3318871AB1002DF7AB /* cert.pem in Resources */ = {isa = PBXBuildFile; fileRef = 4DAA8D3018871AB1002DF7AB /* cert.pem */; };
+		4DAA8D3418871AB1002DF7AB /* json.php in Resources */ = {isa = PBXBuildFile; fileRef = 4DAA8D3118871AB1002DF7AB /* json.php */; };
+		4DAA8D3518871AB1002DF7AB /* key.pem in Resources */ = {isa = PBXBuildFile; fileRef = 4DAA8D3218871AB1002DF7AB /* key.pem */; };
 		4DDC4FAE182D641600B76923 /* Default@2x-portrait.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DDC4FAC182D641600B76923 /* Default@2x-portrait.png */; };
 		4DDC4FAF182D641600B76923 /* Default@2x~iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DDC4FAD182D641600B76923 /* Default@2x~iphone.png */; };
 		4DEE832F1882053700E5B77F /* DisplayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DEE83241882053700E5B77F /* DisplayView.m */; };
@@ -137,6 +140,9 @@
 		4DAA497D185F93B7002C1E79 /* DataClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataClass.m; sourceTree = "<group>"; };
 		4DAA497F185F9938002C1E79 /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background.png; sourceTree = "<group>"; };
 		4DAA4981185FBBF2002C1E79 /* budget.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = budget.png; sourceTree = "<group>"; };
+		4DAA8D3018871AB1002DF7AB /* cert.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = cert.pem; sourceTree = "<group>"; };
+		4DAA8D3118871AB1002DF7AB /* json.php */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.php; path = json.php; sourceTree = "<group>"; };
+		4DAA8D3218871AB1002DF7AB /* key.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = key.pem; sourceTree = "<group>"; };
 		4DDC4FAC182D641600B76923 /* Default@2x-portrait.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x-portrait.png"; sourceTree = "<group>"; };
 		4DDC4FAD182D641600B76923 /* Default@2x~iphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x~iphone.png"; sourceTree = "<group>"; };
 		4DEE83231882053700E5B77F /* DisplayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DisplayView.h; sourceTree = "<group>"; };
@@ -203,6 +209,7 @@
 			isa = PBXGroup;
 			children = (
 				4DA3F006181B09DC007515C9 /* Energi */,
+				4DAA8D2F18871AB1002DF7AB /* Server */,
 				4DA3F028181B09DD007515C9 /* EnergiTests */,
 				4DA3EFFF181B09DC007515C9 /* Frameworks */,
 				4DA3EFFE181B09DC007515C9 /* Products */,
@@ -341,6 +348,16 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		4DAA8D2F18871AB1002DF7AB /* Server */ = {
+			isa = PBXGroup;
+			children = (
+				4DAA8D3018871AB1002DF7AB /* cert.pem */,
+				4DAA8D3118871AB1002DF7AB /* json.php */,
+				4DAA8D3218871AB1002DF7AB /* key.pem */,
+			);
+			path = Server;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -423,11 +440,13 @@
 			files = (
 				4DDC4FAF182D641600B76923 /* Default@2x~iphone.png in Resources */,
 				4DAA496F185F592E002C1E79 /* fb.png in Resources */,
+				4DAA8D3318871AB1002DF7AB /* cert.pem in Resources */,
 				4D01FAEB186343210020311C /* bar chart.png in Resources */,
 				4DDC4FAE182D641600B76923 /* Default@2x-portrait.png in Resources */,
 				4D01FAED186345F50020311C /* pie chart.png in Resources */,
 				4DAA4973185F86B4002C1E79 /* graph.png in Resources */,
 				4DA3F017181B09DC007515C9 /* Main_iPad.storyboard in Resources */,
+				4DAA8D3418871AB1002DF7AB /* json.php in Resources */,
 				4DA3F01C181B09DD007515C9 /* Images.xcassets in Resources */,
 				4DAA4971185F5BED002C1E79 /* twitter.png in Resources */,
 				4DA73B0F18624570009AEBED /* select.png in Resources */,
@@ -436,6 +455,7 @@
 				4DAA4979185F8B61002C1E79 /* cost.png in Resources */,
 				4DAA4980185F9938002C1E79 /* background.png in Resources */,
 				4DA3F014181B09DC007515C9 /* Main_iPhone.storyboard in Resources */,
+				4DAA8D3518871AB1002DF7AB /* key.pem in Resources */,
 				4DA3F00B181B09DC007515C9 /* InfoPlist.strings in Resources */,
 				4DAA497B185F8EF3002C1E79 /* devices.png in Resources */,
 				4DA73B0E18624570009AEBED /* center.png in Resources */,
