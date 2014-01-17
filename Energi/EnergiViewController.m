@@ -29,10 +29,10 @@
     DataClass *obj = [DataClass getInstance];
     obj.budget = 55;
     obj.houseID = @"";
-    obj.sourceview = [UIViewController init];
-    obj.colorArray = [NSMutableArray init];
-    obj.valueArray = [NSMutableArray init];
-    obj.titleArray = [NSMutableArray init];
+    obj.sourceview = [[UIViewController alloc] init];
+    obj.colorArray = [[NSMutableArray alloc] init];
+    obj.valueArray = [[NSMutableArray alloc] init];
+    obj.titleArray = [[NSMutableArray alloc] init];
     
     // Clears any value each user.
     
@@ -302,8 +302,7 @@
 
 - (IBAction)retrieveData:(id)sender{
     
-    NSString *getDataURL = @"https://raw2.github.com/Scooby27/Energi/master/Server/json.html";
-   // NSString *getDataURL = @"http://conkave.com/iosdemos/json.php";
+    NSString *getDataURL = @"http://energi.site90.net/json.php";
     NSURL *url = [NSURL URLWithString:getDataURL];
     NSData *data = [NSData dataWithContentsOfURL:url];
     
@@ -312,7 +311,6 @@
     _json = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
     
     _homes = [[NSMutableArray alloc] init];
-    NSLog(@"%lu, %lu", (unsigned long)[_json count], (unsigned long)_json.count);
     
     for(int i = 0; i < [_json count]; i++){
         
@@ -322,7 +320,7 @@
         NSString *partof = [[_json objectAtIndex:i]objectForKey:@"partof"];
         NSString *detail = [[_json objectAtIndex:i]objectForKey:@"detail"];
         
-        NSLog(@"homeid:%@\ntype:%@\nlocation:%@\npartof:%@\ndetail:%@", homeid, type, location, partof, detail);
+        NSLog(@"homeid:%@\ntype:%@\nlocation:%@\npartof:%@\ndetail:%@\n", homeid, type, location, partof, detail);
     }
 }
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
