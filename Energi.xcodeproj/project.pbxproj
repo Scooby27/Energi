@@ -52,6 +52,7 @@
 		4DAA8D3318871AB1002DF7AB /* cert.pem in Resources */ = {isa = PBXBuildFile; fileRef = 4DAA8D3018871AB1002DF7AB /* cert.pem */; };
 		4DAA8D3418871AB1002DF7AB /* json.html in Resources */ = {isa = PBXBuildFile; fileRef = 4DAA8D3118871AB1002DF7AB /* json.html */; };
 		4DAA8D3518871AB1002DF7AB /* key.pem in Resources */ = {isa = PBXBuildFile; fileRef = 4DAA8D3218871AB1002DF7AB /* key.pem */; };
+		4DC213C3188967B40019A37C /* test.php in Resources */ = {isa = PBXBuildFile; fileRef = 4DC213C2188967B40019A37C /* test.php */; };
 		4DDC4FAE182D641600B76923 /* Default@2x-portrait.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DDC4FAC182D641600B76923 /* Default@2x-portrait.png */; };
 		4DDC4FAF182D641600B76923 /* Default@2x~iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DDC4FAD182D641600B76923 /* Default@2x~iphone.png */; };
 		4DEE832F1882053700E5B77F /* DisplayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DEE83241882053700E5B77F /* DisplayView.m */; };
@@ -143,6 +144,7 @@
 		4DAA8D3018871AB1002DF7AB /* cert.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = cert.pem; sourceTree = "<group>"; };
 		4DAA8D3118871AB1002DF7AB /* json.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = json.html; sourceTree = "<group>"; };
 		4DAA8D3218871AB1002DF7AB /* key.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = key.pem; sourceTree = "<group>"; };
+		4DC213C2188967B40019A37C /* test.php */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.php; path = test.php; sourceTree = "<group>"; };
 		4DDC4FAC182D641600B76923 /* Default@2x-portrait.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x-portrait.png"; sourceTree = "<group>"; };
 		4DDC4FAD182D641600B76923 /* Default@2x~iphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x~iphone.png"; sourceTree = "<group>"; };
 		4DEE83231882053700E5B77F /* DisplayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DisplayView.h; sourceTree = "<group>"; };
@@ -353,6 +355,7 @@
 			children = (
 				4DAA8D3018871AB1002DF7AB /* cert.pem */,
 				4DAA8D3118871AB1002DF7AB /* json.html */,
+				4DC213C2188967B40019A37C /* test.php */,
 				4DAA8D3218871AB1002DF7AB /* key.pem */,
 			);
 			path = Server;
@@ -452,6 +455,7 @@
 				4DA73B0F18624570009AEBED /* select.png in Resources */,
 				4DAA4982185FBBF2002C1E79 /* budget.png in Resources */,
 				4DAA4975185F88AA002C1E79 /* share.png in Resources */,
+				4DC213C3188967B40019A37C /* test.php in Resources */,
 				4DAA4979185F8B61002C1E79 /* cost.png in Resources */,
 				4DAA4980185F9938002C1E79 /* background.png in Resources */,
 				4DA3F014181B09DC007515C9 /* Main_iPhone.storyboard in Resources */,

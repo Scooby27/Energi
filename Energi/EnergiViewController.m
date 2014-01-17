@@ -29,6 +29,11 @@
     DataClass *obj = [DataClass getInstance];
     obj.budget = 55;
     obj.houseID = @"";
+    obj.sourceview = [UIViewController init];
+    obj.colorArray = [NSMutableArray init];
+    obj.valueArray = [NSMutableArray init];
+    obj.titleArray = [NSMutableArray init];
+    
     // Clears any value each user.
     
 }
@@ -297,8 +302,8 @@
 
 - (IBAction)retrieveData:(id)sender{
     
-   // NSString *getDataURL = @"https://raw2.github.com/Scooby27/Energi/master/Server/json.php";
-    NSString *getDataURL = @"http://conkave.com/iosdemos/json.php";
+    NSString *getDataURL = @"https://raw2.github.com/Scooby27/Energi/master/Server/json.html";
+   // NSString *getDataURL = @"http://conkave.com/iosdemos/json.php";
     NSURL *url = [NSURL URLWithString:getDataURL];
     NSData *data = [NSData dataWithContentsOfURL:url];
     
