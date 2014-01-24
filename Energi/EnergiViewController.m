@@ -35,7 +35,7 @@
     obj.titleArray = [[NSMutableArray alloc] init];
     
     // Clears any value each user.
-    
+    [self retrieveData];
 }
 
 - (void)didReceiveMemoryWarning
@@ -300,27 +300,24 @@
     // Keyboard disappears if the user taps elsewhere on the screen.
 }
 
-- (IBAction)retrieveData:(id)sender{
+- (IBAction)retrieveData{
     
     NSString *getDataURL = @"http://energi.site90.net/json.php";
     NSURL *url = [NSURL URLWithString:getDataURL];
     NSData *data = [NSData dataWithContentsOfURL:url];
     
-   
+    
     
     _json = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
     
     _homes = [[NSMutableArray alloc] init];
     
     for(int i = 0; i < [_json count]; i++){
-        
-        NSString *homeid = [[_json objectAtIndex:i]objectForKey:@"homeid"];
-        NSString *type = [[_json objectAtIndex:i]objectForKey:@"type"];
-        NSString *location = [[_json objectAtIndex:i]objectForKey:@"location"];
-        NSString *partof = [[_json objectAtIndex:i]objectForKey:@"partof"];
-        NSString *detail = [[_json objectAtIndex:i]objectForKey:@"detail"];
-        
-        NSLog(@"homeid:%@\ntype:%@\nlocation:%@\npartof:%@\ndetail:%@\n", homeid, type, location, partof, detail);
+//        
+//        NSString *applianceid = [[_json objectAtIndex:i]objectForKey:@"applianceid"];
+//        NSString *time = [[_json objectAtIndex:i]objectForKey:@"time"];
+//        NSString *value = [[_json objectAtIndex:i]objectForKey:@"value"];
+//        
     }
 }
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {

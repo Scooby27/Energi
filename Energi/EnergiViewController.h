@@ -17,7 +17,7 @@
 
 - (IBAction)tapResignFirstResponder:(id)sender;
 
-- (IBAction)retrieveData:(id)sender;
+- (IBAction)retrieveData;
 
 @property (weak, nonatomic) IBOutlet UILabel *label;
 

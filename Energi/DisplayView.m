@@ -59,7 +59,7 @@
         item.yValue = per;
         item.width = barLength;
         item.name = [titleArray objectAtIndex:i];
-        item.color = [colorArray objectAtIndex:i];
+        item.color =[colorArray objectAtIndex:i];
         
         [items addObject:item];
     }
