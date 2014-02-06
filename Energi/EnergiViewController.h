@@ -17,17 +17,11 @@
 
 - (IBAction)tapResignFirstResponder:(id)sender;
 
-- (IBAction)retrieveData;
-
 @property (weak, nonatomic) IBOutlet UILabel *label;
 
 @property (weak, nonatomic) IBOutlet UITextField *textField;
 
 @property (weak, nonatomic) IBOutlet UITextField *textField1;
-
-@property (strong, nonatomic) NSMutableArray *json;
-
-@property (strong, nonatomic) NSMutableArray *homes;
 
 @property (copy, nonatomic) NSString *houseID;
 

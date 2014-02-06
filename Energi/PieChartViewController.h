@@ -21,6 +21,7 @@
 @property (nonatomic,strong) UIView *pieContainer;
 @property (nonatomic)BOOL inOut;
 @property (nonatomic,strong) UILabel *selLabel;
+@property (strong, nonatomic) NSMutableArray *json;
 
 @property (weak, nonatomic) IBOutlet UIWebView *requestWebView;
 

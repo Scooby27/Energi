@@ -60,13 +60,12 @@
         item.width = barLength;
         item.name = [titleArray objectAtIndex:i];
         item.color =[colorArray objectAtIndex:i];
-        
         [items addObject:item];
     }
     
-    [graph setXaxisTitle:@"Appliance Group"];
-    [graph setYaxisTitle:@"Percentage Share of Household"];
-    [graph setGraphicTitle:@"Appliance Group Share"];
+    [graph setXaxisTitle:@"Time of Day"];
+    [graph setYaxisTitle:@"Percentage of Day's Consumption"];
+    [graph setGraphicTitle:@"Most Active Time of Day"];
     [graph setDelegate:self];
     [graph setBackgroundColor:[UIColor whiteColor]];
     [graph drawHistogramWithItems:items lineWidth:2 color:[UIColor blackColor]];
