@@ -87,7 +87,6 @@
 
 - (BOOL) retrieveData{
     
-    return false;
     DataClass *obj = [DataClass getInstance];
     obj.titleArray = [[NSMutableArray alloc] init];
     obj.valueArray = [[NSMutableArray alloc] init];
