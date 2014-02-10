@@ -491,8 +491,7 @@
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="segueToMenu" destination="6OR-5Y-Iwo" eventType="touchUpInside" id="85k-g2-u1L"/>
-                                                    <segue destination="PEW-BI-U6W" kind="modal" identifier="segue.to.menu" modalTransitionStyle="crossDissolve" id="Urh-YE-Ucn"/>
+                                                    <segue destination="PEW-BI-U6W" kind="modal" id="dT7-MO-bmY"/>
                                                 </connections>
                                             </button>
                                         </barButtonItem>
@@ -544,6 +543,7 @@
                     </view>
                     <connections>
                         <outlet property="displayRangeLbl" destination="o3E-De-6Iv" id="8iv-3N-neo"/>
+                        <segue destination="PEW-BI-U6W" kind="modal" identifier="segue.to.menu" id="fbY-Pd-0Bm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2og-R3-lDl" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -886,9 +886,9 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="Urh-YE-Ucn"/>
+        <segue reference="fbY-Pd-0Bm"/>
         <segue reference="Phj-HF-mtU"/>
-        <segue reference="au3-jz-STn"/>
+        <segue reference="VPT-im-MA2"/>
         <segue reference="Ndk-mz-6eU"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -211,7 +211,7 @@
     for (int i = 0; i < [mValueArray count]; ++i) {
         sum += [[mValueArray objectAtIndex:i] floatValue];
     }
-    float percent = [[mValueArray objectAtIndex:index] floatValue]/sum;
+    float percent = [[mValueArray objectAtIndex:index] floatValue];
     NSString *title = [mTitleArray objectAtIndex:index];
     self.selectedIndex = index;
     if ([self.delegate respondsToSelector:@selector(selectedFinish:index:percent:title:)]) {

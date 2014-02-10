@@ -66,7 +66,7 @@
         self.selLabel.font = [UIFont systemFontOfSize:17];
         self.selLabel.textColor = [UIColor whiteColor];
         [selView addSubview:self.selLabel];
-        [self.pieChartView setTitleText:@"App\nShare"];
+        [self.pieChartView setTitleText:@"Consumption"];
         self.title = @"Cost";
     }else{ // Display error message if unsuccessful connection.
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Connection Warning!" message:@"Cannot connect to Energi database. Please check your internet connection and try again." delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
@@ -86,6 +86,8 @@
 }
 
 - (BOOL) retrieveData{
+    
+    return false;
     DataClass *obj = [DataClass getInstance];
     obj.titleArray = [[NSMutableArray alloc] init];
     obj.valueArray = [[NSMutableArray alloc] init];
@@ -328,7 +330,7 @@
 
 - (void)selectedFinish:(PieChartView *)pieChartView index:(NSInteger)index percent:(float)per title:(NSString *)title{
     self.selLabel.text = [NSString stringWithFormat:@"Time of Day: %@", title];
-    [self.pieChartView setAmountText:[NSString stringWithFormat:@"%2.2f%@",per*100,@"%"]];
+    [self.pieChartView setAmountText:[NSString stringWithFormat:@"%d Wh", (int)per]];
 }
 
 - (void)onCenterClick:(PieChartView *)pieChartView

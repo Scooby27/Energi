@@ -22,7 +22,7 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        [self sortValueArr:valueArr colorArr:colorArr titleArr:titleArr];
+        //[self sortValueArr:valueArr colorArr:colorArr titleArr:titleArr];
         self.rotatedView = [[RotatedView alloc]initWithFrame:self.bounds];
         self.rotatedView.mValueArray = valueArr;
         self.rotatedView.mColorArray = colorArr;
@@ -30,6 +30,7 @@
         self.rotatedView.delegate = self;
         [self addSubview:self.rotatedView];
         
+        // Start of centre view code
         self.centerView = [UIButton buttonWithType:UIButtonTypeCustom];
         [self.centerView removeTarget:self action:nil forControlEvents:UIControlEventTouchUpInside];
         [self.centerView addTarget:self action:@selector(changeInOut:) forControlEvents:UIControlEventTouchUpInside];
@@ -56,6 +57,7 @@
         [self.centerView addSubview:self.amountLabel];
         
         [self addSubview:self.centerView];
+        // End of Centre View code
         
         self.backgroundColor = [UIColor clearColor];
     }
