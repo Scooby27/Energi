@@ -17,6 +17,8 @@
 @synthesize isYDate;
 @synthesize isPercentage;
 @synthesize width;
+@synthesize max;
+@synthesize per;
 
 - (id)init{
 	if(self = [super init]){

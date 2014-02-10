@@ -44,28 +44,36 @@
     
     NSMutableArray *items = [[NSMutableArray alloc] initWithObjects:nil];
     
-    
+    float max = 0;
     for (int i = 0; i < categories_count; i++){
-        total_value += [[valueArray objectAtIndex:i] integerValue];
+        float value = [[valueArray objectAtIndex:i] floatValue];
         
+        if (max < value){
+            max = value;
+        }
+        total_value += [[valueArray objectAtIndex:i] integerValue];
     }
     
     for (int i = 0; i < categories_count; i++){
         
-        float per = 100*[[valueArray objectAtIndex:i] floatValue]/total_value;
+        float value = [[valueArray objectAtIndex:i] floatValue];
+        
+        float per = 100*(value/total_value);
         
         ECGraphItem *item = [[ECGraphItem alloc] init];
-        item.isPercentage = YES;
-        item.yValue = per;
+        item.isPercentage = NO;
+        item.yValue = value;
         item.width = barLength;
         item.name = [titleArray objectAtIndex:i];
         item.color =[colorArray objectAtIndex:i];
+        item.max = 1.2*max;
+        item.per = per;
         [items addObject:item];
     }
     
     [graph setXaxisTitle:@"Time of Day"];
-    [graph setYaxisTitle:@"Percentage of Day's Consumption"];
-    [graph setGraphicTitle:@"Most Active Time of Day"];
+    [graph setYaxisTitle:@"Energy Consumption"];
+    [graph setGraphicTitle:[NSString stringWithFormat:@"Activity over Day: %@", obj.dataDate]];
     [graph setDelegate:self];
     [graph setBackgroundColor:[UIColor whiteColor]];
     [graph drawHistogramWithItems:items lineWidth:2 color:[UIColor blackColor]];

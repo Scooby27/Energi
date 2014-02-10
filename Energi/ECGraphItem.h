@@ -25,5 +25,7 @@
 @property(nonatomic,assign) BOOL isYDate;
 @property(nonatomic,assign) BOOL isPercentage;
 @property(nonatomic,assign) float width;
+@property(nonatomic,assign) float max;
+@property(nonatomic, assign) float per;
 
 @end

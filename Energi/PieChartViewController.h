@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 
 #import "PieChartView.h"
+#import "LeftToRightStoryboardSegue.h"
+#import "MenuViewController.h"
 
 @interface PieChartViewController : UIViewController <PieChartDelegate>
 
@@ -21,6 +23,7 @@
 @property (nonatomic,strong) UIView *pieContainer;
 @property (nonatomic)BOOL inOut;
 @property (nonatomic,strong) UILabel *selLabel;
+@property (nonatomic,strong) IBOutlet UILabel *displayRangeLbl;
 @property (strong, nonatomic) NSMutableArray *json;
 
 @property (weak, nonatomic) IBOutlet UIWebView *requestWebView;

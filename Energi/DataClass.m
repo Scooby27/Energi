@@ -11,16 +11,12 @@
 @implementation DataClass
 
 @synthesize budget;
-
 @synthesize houseID;
-
 @synthesize sourceview;
-
 @synthesize valueArray;
-
 @synthesize colorArray;
-
 @synthesize titleArray;
+@synthesize dataDate;
 
 static DataClass *instance = nil;
 

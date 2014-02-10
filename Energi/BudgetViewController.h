@@ -14,7 +14,6 @@
 - (IBAction)sliderChanged:(id)sender;
 
 @property (weak, nonatomic) IBOutlet UISlider *mySlider;
-
 @property (weak, nonatomic) IBOutlet UILabel *budgetLabel;
 
 @end

@@ -491,7 +491,8 @@
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <connections>
-                                                    <segue destination="PEW-BI-U6W" kind="modal" modalTransitionStyle="crossDissolve" id="Urh-YE-Ucn"/>
+                                                    <action selector="segueToMenu" destination="6OR-5Y-Iwo" eventType="touchUpInside" id="85k-g2-u1L"/>
+                                                    <segue destination="PEW-BI-U6W" kind="modal" identifier="segue.to.menu" modalTransitionStyle="crossDissolve" id="Urh-YE-Ucn"/>
                                                 </connections>
                                             </button>
                                         </barButtonItem>
@@ -527,6 +528,13 @@
                                     <segue destination="QbF-0o-h5Q" kind="custom" customClass="RightToLeftStoryboardSegue" id="r2Q-bh-tFL"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="o3E-De-6Iv">
+                                <rect key="frame" x="20" y="455" width="280" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
@@ -534,6 +542,9 @@
                             <outletCollection property="gestureRecognizers" destination="Ovh-aN-OA7" appends="YES" id="vLi-zI-0v3"/>
                         </connections>
                     </view>
+                    <connections>
+                        <outlet property="displayRangeLbl" destination="o3E-De-6Iv" id="8iv-3N-neo"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2og-R3-lDl" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <swipeGestureRecognizer direction="right" id="Ovh-aN-OA7">
@@ -855,19 +866,6 @@
             </objects>
             <point key="canvasLocation" x="-172" y="427"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="Jhu-4X-xht">
-            <objects>
-                <viewController id="Thz-yv-zJk" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="mtB-nO-sQx">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="RLm-yB-dPT" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-        </scene>
     </scenes>
     <resources>
         <image name="background.png" width="1024" height="1024"/>
@@ -888,9 +886,9 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="i9g-NP-BoT"/>
+        <segue reference="Urh-YE-Ucn"/>
         <segue reference="Phj-HF-mtU"/>
-        <segue reference="Z2r-Tq-io6"/>
-        <segue reference="A5d-X6-xb4"/>
+        <segue reference="au3-jz-STn"/>
+        <segue reference="Ndk-mz-6eU"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -623,23 +623,27 @@ static inline double radians(double degrees){
 	}
 	
 	ECGraphItem *item = [items objectAtIndex:0];
+    int max = 0;
+    
 	if (item.isPercentage) {
-		int max = 100;
-		_ySpacingScale = (float)_yaxisLength/max;
-		_ySpacingLength = (float)max/YSTEPS_COUNT;
-		for (int i = 1; i <= YSTEPS_COUNT; ++i) 
-		{
-			[self drawWords:[ECCommon sOfI:_ySpacingLength*i] AtPoint:CGPointMake(_xaxisStart.x - 20,_xaxisStart.y - _ySpacingScale*i*_ySpacingLength - 8) color:[UIColor blackColor]];
-			[self drawYLineAtPoint:CGPointMake(_xaxisStart.x,_xaxisStart.y - _ySpacingScale*i*_ySpacingLength)
+		max = 100;
+    }else{
+        max = item.max;
+    }
+    
+    _ySpacingScale = (float)_yaxisLength/max;
+    _ySpacingLength = (float)max/YSTEPS_COUNT;
+    for (int i = 1; i <= YSTEPS_COUNT; ++i){
+        [self drawWords:[ECCommon sOfI:_ySpacingLength*i] AtPoint:CGPointMake(_xaxisStart.x - 25,_xaxisStart.y - _ySpacingScale*i*_ySpacingLength - 8) color:[UIColor blackColor]];
+        [self drawYLineAtPoint:CGPointMake(_xaxisStart.x,_xaxisStart.y - _ySpacingScale*i*_ySpacingLength)
 						 lineWidth:2 color:[UIColor blackColor] highlighted:NO];
-		}
-	}
+    }
+	
 	
 	//draw Histogram
 	float itemsLength = 0;
 	int itemsCount = (int)[items count];
-	for (int i = 0; i < itemsCount; ++i) 
-	{
+	for (int i = 0; i < itemsCount; ++i){
 		ECGraphItem *item = [items objectAtIndex:i];
 		itemsLength += item.width;
 	}
@@ -648,8 +652,7 @@ static inline double radians(double degrees){
 	_histogramSpacing = (float)retainLength/(itemsCount + 1);
 	_histogramStartX = _xaxisStart.x +_histogramSpacing;
     
-	for (int i = 0; i < itemsCount; ++i) 
-	{
+	for (int i = 0; i < itemsCount; ++i){
 		ECGraphItem *item = [items objectAtIndex:i];
 		UIColor *color = item.color?item.color:[self getRandomColor];
 		[self drawHistogramWithItem:item index:i color:color];
@@ -663,16 +666,19 @@ static inline double radians(double degrees){
 		_histogramStartX += _histogramSpacing + item.width;
         
 	CGRect rect = CGRectMake(_histogramStartX, _xaxisStart.y - _ySpacingScale*item.yValue - 1,item.width, _ySpacingScale*item.yValue);
+    
 	[color setFill];
 	[[UIColor clearColor] setStroke];
 	CGContextAddRect(_context,rect);
 	CGContextDrawPath(_context, kCGPathFillStroke);
 	[[UIColor blackColor] set];
-	NSString *percentage = [NSString stringWithFormat:@"%.1f%%",item.yValue];
     
-    NSDictionary *textAttributes = @{NSFontAttributeName: [UIFont systemFontOfSize:8]};
-    
-	[percentage drawAtPoint:CGPointMake(_histogramStartX,_xaxisStart.y - _ySpacingScale*item.yValue - 15) withAttributes:textAttributes];
+    // Get percentages and write them above bars
+//	NSString *percentage = [NSString stringWithFormat:@"%.1f%%",item.per];
+//    
+//    NSDictionary *textAttributes = @{NSFontAttributeName: [UIFont systemFontOfSize:8]};
+//    
+//	[percentage drawAtPoint:CGPointMake(_histogramStartX,_xaxisStart.y - _ySpacingScale*item.yValue - 15) withAttributes:textAttributes];
     
     UILabel *barTitlelbl = [[UILabel alloc] initWithFrame:CGRectMake(_histogramStartX, _xaxisStart.y + 20, item.width, 20)];
     barTitlelbl.transform = CGAffineTransformMakeRotation(-1.57);
