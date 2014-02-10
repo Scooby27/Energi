@@ -72,7 +72,7 @@
     }
     
     [graph setXaxisTitle:@"Time of Day"];
-    [graph setYaxisTitle:@"Energy Consumption"];
+    [graph setYaxisTitle:@"Energy Consumption (Wh)"];
     [graph setGraphicTitle:[NSString stringWithFormat:@"Activity over Day: %@", obj.dataDate]];
     [graph setDelegate:self];
     [graph setBackgroundColor:[UIColor whiteColor]];

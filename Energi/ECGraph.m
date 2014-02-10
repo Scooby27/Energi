@@ -228,14 +228,14 @@ static inline double radians(double degrees){
 -(void)drawXYAxisTitleWithColor:(UIColor *)color
 {
 	[color set];
-	UILabel *lb_xaxisTitle = [[UILabel alloc] initWithFrame:CGRectMake(_xaxisStart.x , _xaxisStart.y + 100 , _xaxisLength, 30)];
+	UILabel *lb_xaxisTitle = [[UILabel alloc] initWithFrame:CGRectMake(_xaxisStart.x, _xaxisStart.y + 100 , _xaxisLength, 30)];
 	lb_xaxisTitle.text = _xaxisTitle;
 	lb_xaxisTitle.textAlignment = NSTextAlignmentCenter;
 	lb_xaxisTitle.backgroundColor = [UIColor clearColor];
 	lb_xaxisTitle.font = [UIFont boldSystemFontOfSize:13];
 	[ECCAST(UIView,_delegate) addSubview:lb_xaxisTitle];
 	
-	UILabel *lb_yaxisTitle = [[UILabel alloc] initWithFrame:CGRectMake(_xaxisStart.x - _yaxisLength/2 - 30, _yaxisEnd.y + _yaxisLength/2 , _yaxisLength, 18)];
+	UILabel *lb_yaxisTitle = [[UILabel alloc] initWithFrame:CGRectMake(_xaxisStart.x - _yaxisLength/2 - 35, _yaxisEnd.y + _yaxisLength/2 , _yaxisLength, 18)];
 	lb_yaxisTitle.text = _yaxisTitle;
 	lb_yaxisTitle.textAlignment = NSTextAlignmentCenter;
 	lb_yaxisTitle.backgroundColor = [UIColor clearColor];
@@ -362,10 +362,10 @@ static inline double radians(double degrees){
 		_screenWidth = isPortrait ? PORTRAIT_SCREEN_WIDTH : LANDSCAPE_SCREEN_WIDTH;
 		
 		//convert the coordinate left top(0,0) to left bottom(0,0)
-		_xaxisStart = CGPointMake(_frame.origin.x + XAXIS_OFFSET - 1, _screenHeight - _frame.origin.y - YAXIS_OFFSET); //_frame.origin.x + XAXIS_OFFSET - 1 correct x-axis position
+		_xaxisStart = CGPointMake(_frame.origin.x + XAXIS_OFFSET + 10, _screenHeight - _frame.origin.y - YAXIS_OFFSET); //_frame.origin.x + XAXIS_OFFSET - 1 correct x-axis position
 		_xaxisEnd = CGPointMake(_frame.origin.x + _frame.size.width - XAXIS_OFFSET, _screenHeight - _frame.origin.y - YAXIS_OFFSET);
-		_yaxisStart = CGPointMake(_frame.origin.x + XAXIS_OFFSET, _screenHeight - _frame.origin.y - YAXIS_OFFSET);
-		_yaxisEnd = CGPointMake(_frame.origin.x + XAXIS_OFFSET, _screenHeight - _frame.origin.y - YAXIS_OFFSET - _frame.size.height + 2*YAXIS_OFFSET);
+		_yaxisStart = CGPointMake(_frame.origin.x + XAXIS_OFFSET + 10, _screenHeight - _frame.origin.y - YAXIS_OFFSET);
+		_yaxisEnd = CGPointMake(_frame.origin.x + XAXIS_OFFSET + 10, _screenHeight - _frame.origin.y - YAXIS_OFFSET - _frame.size.height + 2*YAXIS_OFFSET);
 		
 		//set spacing count
 		_xSpacing = XSPACEING;
