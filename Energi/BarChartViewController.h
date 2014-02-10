@@ -12,9 +12,11 @@
 #import "ECGraphPoint.h"
 #import "ECGraphLine.h"
 #import "ECGraphItem.h"
-
+#import "DataClass.h"
 
 
 @interface BarChartViewController : UIViewController
+
+@property (weak, nonatomic) IBOutlet UILabel *IDlbl;
 
 @end

@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "DataClass.h"
 
 @interface BudgetViewController : UIViewController
 
@@ -15,5 +16,6 @@
 
 @property (weak, nonatomic) IBOutlet UISlider *mySlider;
 @property (weak, nonatomic) IBOutlet UILabel *budgetLabel;
+@property (weak, nonatomic) IBOutlet UILabel *IDlbl;
 
 @end

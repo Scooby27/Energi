@@ -7,7 +7,6 @@
 //
 
 #import "PieChartViewController.h"
-#import "DataClass.h"
 
 #define PIE_HEIGHT 230
 
@@ -38,6 +37,10 @@
 {
     [super viewDidLoad];
     self.inOut = YES;
+    
+    DataClass *obj = [DataClass getInstance];
+    self.IDlbl.text = [NSString stringWithFormat:@"ID: %@", obj.houseID];
+    // Creates a label notifying the household that is currently logged in.
     
     if([self retrieveData]){
         //add shadow img

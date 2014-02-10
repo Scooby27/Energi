@@ -31,6 +31,9 @@
         [self sliderChanged:self];
     }
     
+    self.IDlbl.text = [NSString stringWithFormat:@"ID: %@", obj.houseID];
+    // Creates a label notifying the household that is currently logged in.
+    
 	// Do any additional setup after loading the view.
 }
 

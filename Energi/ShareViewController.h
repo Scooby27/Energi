@@ -8,15 +8,15 @@
 
 #import <UIKit/UIKit.h>
 #import <FacebookSDK/FacebookSDK.h>
+#import "DataClass.h"
 
 @interface ShareViewController : UIViewController <FBLoginViewDelegate>
 
 - (IBAction)facebook:(id)sender;
 
 @property (strong, nonatomic) IBOutlet FBProfilePictureView *profilePictureView;
-
 @property (strong, nonatomic) IBOutlet UILabel *nameLabel;
-
 @property (strong, nonatomic) IBOutlet UILabel *statusLabel;
+@property (weak, nonatomic) IBOutlet UILabel *IDlbl;
 
 @end

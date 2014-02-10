@@ -11,6 +11,7 @@
 #import "PieChartView.h"
 #import "LeftToRightStoryboardSegue.h"
 #import "MenuViewController.h"
+#import "DataClass.h"
 
 @interface PieChartViewController : UIViewController <PieChartDelegate>
 
@@ -25,6 +26,7 @@
 @property (nonatomic,strong) UILabel *selLabel;
 @property (nonatomic,strong) IBOutlet UILabel *displayRangeLbl;
 @property (strong, nonatomic) NSMutableArray *json;
+@property (weak, nonatomic) IBOutlet UILabel *IDlbl;
 
 @property (weak, nonatomic) IBOutlet UIWebView *requestWebView;
 

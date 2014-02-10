@@ -29,6 +29,10 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    
+    DataClass *obj = [DataClass getInstance];
+    self.IDlbl.text = [NSString stringWithFormat:@"ID: %@", obj.houseID];
+    // Creates a label notifying the household that is currently logged in.
 }
 
 - (IBAction)facebook:(id)sender{

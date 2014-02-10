@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "DataClass.h"
 
 @interface MenuViewController : UIViewController
+
+@property (weak, nonatomic) IBOutlet UILabel *IDlbl;
 
 @end
