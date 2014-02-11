@@ -28,12 +28,14 @@
     
     DataClass *obj = [DataClass getInstance];
     obj.budget = 55;
+    obj.hasLoaded = false;
     obj.houseID = @"";
     obj.sourceview = [[UIViewController alloc] init];
     obj.colorArray = [[NSMutableArray alloc] init];
     obj.valueArray = [[NSMutableArray alloc] init];
     obj.titleArray = [[NSMutableArray alloc] init];
     // Clears any value each user.
+    
 }
 
 - (void)didReceiveMemoryWarning

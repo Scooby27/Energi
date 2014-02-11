@@ -11,6 +11,7 @@
 @implementation DataClass
 
 @synthesize budget;
+@synthesize hasLoaded;
 @synthesize houseID;
 @synthesize sourceview;
 @synthesize valueArray;

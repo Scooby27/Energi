@@ -42,42 +42,50 @@
     self.IDlbl.text = [NSString stringWithFormat:@"ID: %@", obj.houseID];
     // Creates a label notifying the household that is currently logged in.
     
-    if([self retrieveData]){
-        //add shadow img
-        CGRect pieFrame = CGRectMake((self.view.frame.size.width - PIE_HEIGHT) / 2, 100-0, PIE_HEIGHT, PIE_HEIGHT);
-        
-        UIImage *shadowImg = [UIImage imageNamed:@"shadow.png"];
-        UIImageView *shadowImgView = [[UIImageView alloc]initWithImage:shadowImg];
-        shadowImgView.frame = CGRectMake(0, pieFrame.origin.y + PIE_HEIGHT, shadowImg.size.width/2, shadowImg.size.height/2);
-        [self.view addSubview:shadowImgView];
-        
-        self.pieContainer = [[UIView alloc]initWithFrame:pieFrame];
-        self.pieChartView = [[PieChartView alloc]initWithFrame:self.pieContainer.bounds withValue:self.valueArray withColor:self.colorArray withTitle:self.titleArray withCenter:true];
-        self.pieChartView.delegate = self;
-        [self.pieContainer addSubview:self.pieChartView];
-        [self.view addSubview:self.pieContainer];
-        
-        //add selected view
-        UIImageView *selView = [[UIImageView alloc]init];
-        selView.image = [UIImage imageNamed:@"select.png"];
-        selView.frame = CGRectMake((self.view.frame.size.width - selView.image.size.width/2)/2, self.pieContainer.frame.origin.y + self.pieContainer.frame.size.height + 10, selView.image.size.width/2, selView.image.size.height/2);
-        [self.view addSubview:selView];
-        
-        self.selLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, 24, selView.image.size.width/2, 21)];
-        self.selLabel.backgroundColor = [UIColor clearColor];
-        self.selLabel.textAlignment = NSTextAlignmentCenter;
-        self.selLabel.font = [UIFont systemFontOfSize:17];
-        self.selLabel.textColor = [UIColor whiteColor];
-        [selView addSubview:self.selLabel];
-        [self.pieChartView setTitleText:@"Energy"];
-        self.title = @"Cost";
-    }else{ // Display error message if unsuccessful connection.
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Connection Warning!" message:@"Cannot connect to Energi database. Please check your internet connection and try again." delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
-        // Sets up warning alert.
-        
-        [alert show];
-        // Show the alert.
-    }
+    self.displayRangeLbl.text = [NSString stringWithFormat:@"Activity over Day: %@", obj.dataDate];
+    // Creates a label containign data about the time range.
+    
+    self.valueArray = obj.valueArray;
+    self.colorArray = obj.colorArray;
+    self.titleArray = obj.titleArray;
+    
+    //add shadow img
+    CGRect pieFrame = CGRectMake((self.view.frame.size.width - PIE_HEIGHT) / 2, 100-0, PIE_HEIGHT, PIE_HEIGHT);
+    
+    UIImage *shadowImg = [UIImage imageNamed:@"shadow.png"];
+    UIImageView *shadowImgView = [[UIImageView alloc]initWithImage:shadowImg];
+    shadowImgView.frame = CGRectMake(0, pieFrame.origin.y + PIE_HEIGHT, shadowImg.size.width/2, shadowImg.size.height/2);
+    [self.view addSubview:shadowImgView];
+    
+    self.pieContainer = [[UIView alloc]initWithFrame:pieFrame];
+    self.pieChartView = [[PieChartView alloc]initWithFrame:self.pieContainer.bounds withValue:self.valueArray withColor:self.colorArray withTitle:self.titleArray withCenter:true];
+    self.pieChartView.delegate = self;
+    [self.pieContainer addSubview:self.pieChartView];
+    [self.view addSubview:self.pieContainer];
+    
+    //add selected view
+    UIImageView *selView = [[UIImageView alloc]init];
+    selView.image = [UIImage imageNamed:@"select.png"];
+    selView.frame = CGRectMake((self.view.frame.size.width - selView.image.size.width/2)/2, self.pieContainer.frame.origin.y + self.pieContainer.frame.size.height + 10, selView.image.size.width/2, selView.image.size.height/2);
+    [self.view addSubview:selView];
+    
+    self.selLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, 24, selView.image.size.width/2, 21)];
+    self.selLabel.backgroundColor = [UIColor clearColor];
+    self.selLabel.textAlignment = NSTextAlignmentCenter;
+    self.selLabel.font = [UIFont systemFontOfSize:17];
+    self.selLabel.textColor = [UIColor whiteColor];
+    [selView addSubview:self.selLabel];
+    [self.pieChartView setTitleText:@"Energy"];
+    self.title = @"Cost";
+    
+    
+    //    // Display error message if unsuccessful connection.
+    //    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Connection Warning!" message:@"Cannot connect to Energi database. Please check your internet connection and try again." delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
+    //    // Sets up warning alert.
+    //
+    //    [alert show];
+    //    // Show the alert.
+    
     
 }
 
@@ -352,7 +360,7 @@
     [self.pieChartView reloadChart];
     
     if (self.inOut) {
-        [self.pieChartView setTitleText:@"Appliances"];
+        [self.pieChartView setTitleText:@"Energy"];
         
     }else{
         [self.pieChartView setTitleText:@"Cost"];

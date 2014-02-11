@@ -13,4 +13,6 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *IDlbl;
 
+@property (strong, nonatomic) NSMutableArray *json;
+
 @end

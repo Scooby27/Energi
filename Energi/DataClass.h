@@ -15,6 +15,7 @@
 }
 
 @property (nonatomic) int budget;
+@property (nonatomic) BOOL hasLoaded;
 @property (nonatomic, retain) NSString *houseID;
 @property (nonatomic, retain) UIViewController* sourceview;
 @property (nonatomic,strong) NSMutableArray *valueArray;
