@@ -2,15 +2,15 @@
 //  PieChartViewController.m
 //  Energi
 //
-//  Created by Scott Boyd on 18/12/2013.
-//  Copyright (c) 2013 Scott Boyd. All rights reserved.
+//  Created by Scott Boyd on 11/02/2014.
+//  Copyright (c) 2014 Scott Boyd. All rights reserved.
 //
 
-#import "PieChartViewController.h"
+#import "PieChartWheelViewController.h"
 
 #define PIE_HEIGHT 230
 
-@implementation PieChartViewController
+@implementation PieChartWheelViewController
 
 - (void)dealloc
 {
@@ -52,7 +52,7 @@
         [self.view addSubview:shadowImgView];
         
         self.pieContainer = [[UIView alloc]initWithFrame:pieFrame];
-        self.pieChartView = [[PieChartView alloc]initWithFrame:self.pieContainer.bounds withValue:self.valueArray withColor:self.colorArray withTitle:self.titleArray withCenter:false];
+        self.pieChartView = [[PieChartView alloc]initWithFrame:self.pieContainer.bounds withValue:self.valueArray withColor:self.colorArray withTitle:self.titleArray withCenter:true];
         self.pieChartView.delegate = self;
         [self.pieContainer addSubview:self.pieChartView];
         [self.view addSubview:self.pieContainer];
@@ -346,7 +346,7 @@
     self.inOut = !self.inOut;
     self.pieChartView.delegate = nil;
     [self.pieChartView removeFromSuperview];
-    self.pieChartView = [[PieChartView alloc]initWithFrame:self.pieContainer.bounds withValue:self.valueArray withColor:self.inOut?self.colorArray:self.colorArray2 withTitle:self.titleArray withCenter:false];
+    self.pieChartView = [[PieChartView alloc]initWithFrame:self.pieContainer.bounds withValue:self.valueArray withColor:self.inOut?self.colorArray:self.colorArray2 withTitle:self.titleArray withCenter:true];
     self.pieChartView.delegate = self;
     [self.pieContainer addSubview:self.pieChartView];
     [self.pieChartView reloadChart];

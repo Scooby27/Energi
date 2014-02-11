@@ -1,9 +1,9 @@
 //
-//  PieChartViewController.h
+//  GraphViewController.h
 //  Energi
 //
-//  Created by Scott Boyd on 18/12/2013.
-//  Copyright (c) 2013 Scott Boyd. All rights reserved.
+//  Created by Scott Boyd on 11/02/2014.
+//  Copyright (c) 2014 Scott Boyd. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
@@ -13,7 +13,7 @@
 #import "MenuViewController.h"
 #import "DataClass.h"
 
-@interface PieChartViewController : UIViewController <PieChartDelegate>
+@interface PieChartWheelViewController : UIViewController <PieChartDelegate>
 
 @property (nonatomic,strong) NSMutableArray *valueArray;
 @property (nonatomic,strong) NSMutableArray *colorArray;

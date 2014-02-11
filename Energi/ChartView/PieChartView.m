@@ -18,7 +18,7 @@
     self.amountLabel = nil;
 }
 
-- (id)initWithFrame:(CGRect)frame withValue:(NSMutableArray *)valueArr withColor:(NSMutableArray *)colorArr withTitle:(NSMutableArray *)titleArr
+- (id)initWithFrame:(CGRect)frame withValue:(NSMutableArray *)valueArr withColor:(NSMutableArray *)colorArr withTitle:(NSMutableArray *)titleArr withCenter:(BOOL)hasCenter
 {
     self = [super initWithFrame:frame];
     if (self) {
@@ -31,33 +31,35 @@
         [self addSubview:self.rotatedView];
         
         // Start of centre view code
-        self.centerView = [UIButton buttonWithType:UIButtonTypeCustom];
-        [self.centerView removeTarget:self action:nil forControlEvents:UIControlEventTouchUpInside];
-        [self.centerView addTarget:self action:@selector(changeInOut:) forControlEvents:UIControlEventTouchUpInside];
-        UIImage *centerImage = [UIImage imageNamed:@"center.png"];
-        [self.centerView setBackgroundImage:centerImage forState:UIControlStateNormal];
-        [self.centerView setBackgroundImage:centerImage forState:UIControlStateHighlighted];
-        self.centerView.frame = CGRectMake((frame.size.width - centerImage.size.width/2)/2, (frame.size.height - centerImage.size.height/2)/2, centerImage.size.width/2, centerImage.size.height/2);
-        int titleWidth = 65;
-        self.title = [[UILabel alloc]initWithFrame:CGRectMake((centerImage.size.width/2 - titleWidth)/2,35 , titleWidth, 17)];
-        self.title.backgroundColor = [UIColor clearColor];
-        self.title.textAlignment = NSTextAlignmentCenter;
-        self.title.font = [UIFont systemFontOfSize:16];
-        self.title.textColor = [self colorFromHexRGB:@"cecece"];
-        self.title.text = @"";
-        [self.centerView addSubview:self.title];
-        
-        int amountWidth = 75;
-        self.amountLabel = [[UILabel alloc]initWithFrame:CGRectMake((centerImage.size.width/2 - amountWidth)/2, 53, amountWidth, 22)];
-        self.amountLabel.backgroundColor = [UIColor clearColor];
-        self.amountLabel.textAlignment = NSTextAlignmentCenter;
-        self.amountLabel.font = [UIFont boldSystemFontOfSize:21];
-        self.amountLabel.textColor = [self colorFromHexRGB:@"ffffff"];
-        [self.amountLabel setAdjustsFontSizeToFitWidth:YES];
-        [self.centerView addSubview:self.amountLabel];
-        
-        [self addSubview:self.centerView];
-        // End of Centre View code
+        if(hasCenter){
+            self.centerView = [UIButton buttonWithType:UIButtonTypeCustom];
+            [self.centerView removeTarget:self action:nil forControlEvents:UIControlEventTouchUpInside];
+            [self.centerView addTarget:self action:@selector(changeInOut:) forControlEvents:UIControlEventTouchUpInside];
+            UIImage *centerImage = [UIImage imageNamed:@"center.png"];
+            [self.centerView setBackgroundImage:centerImage forState:UIControlStateNormal];
+            [self.centerView setBackgroundImage:centerImage forState:UIControlStateHighlighted];
+            self.centerView.frame = CGRectMake((frame.size.width - centerImage.size.width/2)/2, (frame.size.height - centerImage.size.height/2)/2, centerImage.size.width/2, centerImage.size.height/2);
+            int titleWidth = 65;
+            self.title = [[UILabel alloc]initWithFrame:CGRectMake((centerImage.size.width/2 - titleWidth)/2,35 , titleWidth, 17)];
+            self.title.backgroundColor = [UIColor clearColor];
+            self.title.textAlignment = NSTextAlignmentCenter;
+            self.title.font = [UIFont systemFontOfSize:16];
+            self.title.textColor = [self colorFromHexRGB:@"cecece"];
+            self.title.text = @"";
+            [self.centerView addSubview:self.title];
+            
+            int amountWidth = 75;
+            self.amountLabel = [[UILabel alloc]initWithFrame:CGRectMake((centerImage.size.width/2 - amountWidth)/2, 53, amountWidth, 22)];
+            self.amountLabel.backgroundColor = [UIColor clearColor];
+            self.amountLabel.textAlignment = NSTextAlignmentCenter;
+            self.amountLabel.font = [UIFont boldSystemFontOfSize:21];
+            self.amountLabel.textColor = [self colorFromHexRGB:@"ffffff"];
+            [self.amountLabel setAdjustsFontSizeToFitWidth:YES];
+            [self.centerView addSubview:self.amountLabel];
+            
+            [self addSubview:self.centerView];
+
+        }
         
         self.backgroundColor = [UIColor clearColor];
     }

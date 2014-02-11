@@ -21,7 +21,7 @@
 @interface PieChartView : UIView <RotatedViewDelegate>
 
 @property(nonatomic, assign) id<PieChartDelegate> delegate;
-- (id)initWithFrame:(CGRect)frame withValue:(NSMutableArray *)valueArr withColor:(NSMutableArray *)colorArr withTitle:(NSMutableArray *)titleArr;
+- (id)initWithFrame:(CGRect)frame withValue:(NSMutableArray *)valueArr withColor:(NSMutableArray *)colorArr withTitle:(NSMutableArray *)titleArr withCenter:(BOOL)hasCenter;
 - (void)reloadChart;
 - (void)setAmountText:(NSString *)text;
 - (void)setTitleText:(NSString *)text;

@@ -7,13 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4D01FAEB186343210020311C /* bar chart.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D01FAEA186343210020311C /* bar chart.png */; };
-		4D01FAED186345F50020311C /* pie chart.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D01FAEC186345F50020311C /* pie chart.png */; };
 		4D01FAF2186393180020311C /* BarChartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D01FAF1186393180020311C /* BarChartViewController.m */; };
 		4D322B77188476940027ED47 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D322B76188476940027ED47 /* MenuViewController.m */; };
 		4D4D45461833F31400329B9B /* RightToLeftStoryboardSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D4D45451833F31400329B9B /* RightToLeftStoryboardSegue.m */; };
 		4D4D45491833F40100329B9B /* LeftToRightStoryboardSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D4D45481833F40100329B9B /* LeftToRightStoryboardSegue.m */; };
 		4D4D454C1833F9A700329B9B /* SettingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D4D454B1833F9A700329B9B /* SettingsTableViewController.m */; };
+		4D9392F218AADA8200CABC0C /* PieChartWheelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D9392F118AADA8200CABC0C /* PieChartWheelViewController.m */; };
+		4D9392F418AAE19000CABC0C /* piechartwheel.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D9392F318AAE19000CABC0C /* piechartwheel.png */; };
+		4D9392F618AAE1A000CABC0C /* piechart.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D9392F518AAE1A000CABC0C /* piechart.png */; };
 		4DA3F001181B09DC007515C9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DA3F000181B09DC007515C9 /* Foundation.framework */; };
 		4DA3F003181B09DC007515C9 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DA3F002181B09DC007515C9 /* CoreGraphics.framework */; };
 		4DA3F005181B09DC007515C9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DA3F004181B09DC007515C9 /* UIKit.framework */; };
@@ -43,8 +44,6 @@
 		4DAA4971185F5BED002C1E79 /* twitter.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DAA4970185F5BED002C1E79 /* twitter.png */; };
 		4DAA4973185F86B4002C1E79 /* graph.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DAA4972185F86B4002C1E79 /* graph.png */; };
 		4DAA4975185F88AA002C1E79 /* share.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DAA4974185F88AA002C1E79 /* share.png */; };
-		4DAA4977185F8AD6002C1E79 /* realtime.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DAA4976185F8AD6002C1E79 /* realtime.png */; };
-		4DAA4979185F8B61002C1E79 /* cost.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DAA4978185F8B61002C1E79 /* cost.png */; };
 		4DAA497B185F8EF3002C1E79 /* devices.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DAA497A185F8EF3002C1E79 /* devices.png */; };
 		4DAA497E185F93B7002C1E79 /* DataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DAA497D185F93B7002C1E79 /* DataClass.m */; };
 		4DAA4980185F9938002C1E79 /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = 4DAA497F185F9938002C1E79 /* background.png */; };
@@ -71,8 +70,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		4D01FAEA186343210020311C /* bar chart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bar chart.png"; sourceTree = "<group>"; };
-		4D01FAEC186345F50020311C /* pie chart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pie chart.png"; sourceTree = "<group>"; };
 		4D01FAF0186393180020311C /* BarChartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BarChartViewController.h; sourceTree = "<group>"; };
 		4D01FAF1186393180020311C /* BarChartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BarChartViewController.m; sourceTree = "<group>"; };
 		4D322B75188476940027ED47 /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
@@ -83,6 +80,10 @@
 		4D4D45481833F40100329B9B /* LeftToRightStoryboardSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeftToRightStoryboardSegue.m; sourceTree = "<group>"; };
 		4D4D454A1833F9A700329B9B /* SettingsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsTableViewController.h; sourceTree = "<group>"; };
 		4D4D454B1833F9A700329B9B /* SettingsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsTableViewController.m; sourceTree = "<group>"; };
+		4D9392F018AADA8200CABC0C /* PieChartWheelViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PieChartWheelViewController.h; sourceTree = "<group>"; };
+		4D9392F118AADA8200CABC0C /* PieChartWheelViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PieChartWheelViewController.m; sourceTree = "<group>"; };
+		4D9392F318AAE19000CABC0C /* piechartwheel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = piechartwheel.png; sourceTree = "<group>"; };
+		4D9392F518AAE1A000CABC0C /* piechart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = piechart.png; sourceTree = "<group>"; };
 		4D994E371832FC24004BC678 /* Icon-40@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-40@2x.png"; path = "Images.xcassets/AppIcon.appiconset/Icon-40@2x.png"; sourceTree = "<group>"; };
 		4D994E381832FC33004BC678 /* Icon-40.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-40.png"; path = "Images.xcassets/AppIcon.appiconset/Icon-40.png"; sourceTree = "<group>"; };
 		4D994E391832FC47004BC678 /* Icon-60@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-60@2x.png"; path = "Images.xcassets/AppIcon.appiconset/Icon-60@2x.png"; sourceTree = "<group>"; };
@@ -130,8 +131,6 @@
 		4DAA4970185F5BED002C1E79 /* twitter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = twitter.png; sourceTree = "<group>"; };
 		4DAA4972185F86B4002C1E79 /* graph.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = graph.png; sourceTree = "<group>"; };
 		4DAA4974185F88AA002C1E79 /* share.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = share.png; sourceTree = "<group>"; };
-		4DAA4976185F8AD6002C1E79 /* realtime.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = realtime.png; sourceTree = "<group>"; };
-		4DAA4978185F8B61002C1E79 /* cost.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cost.png; sourceTree = "<group>"; };
 		4DAA497A185F8EF3002C1E79 /* devices.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = devices.png; sourceTree = "<group>"; };
 		4DAA497C185F93B7002C1E79 /* DataClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataClass.h; sourceTree = "<group>"; };
 		4DAA497D185F93B7002C1E79 /* DataClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataClass.m; sourceTree = "<group>"; };
@@ -248,6 +247,8 @@
 				4D01FAF1186393180020311C /* BarChartViewController.m */,
 				4DA73B11186245F4009AEBED /* PieChartViewController.h */,
 				4DA73B12186245F4009AEBED /* PieChartViewController.m */,
+				4D9392F018AADA8200CABC0C /* PieChartWheelViewController.h */,
+				4D9392F118AADA8200CABC0C /* PieChartWheelViewController.m */,
 				4DA3F018181B09DC007515C9 /* EnergiViewController.h */,
 				4DA3F019181B09DC007515C9 /* EnergiViewController.m */,
 				4D322B75188476940027ED47 /* MenuViewController.h */,
@@ -271,11 +272,9 @@
 			children = (
 				4DA73B0718624570009AEBED /* Images */,
 				4DAA497F185F9938002C1E79 /* background.png */,
-				4D01FAEA186343210020311C /* bar chart.png */,
-				4D01FAEC186345F50020311C /* pie chart.png */,
+				4D9392F518AAE1A000CABC0C /* piechart.png */,
+				4D9392F318AAE19000CABC0C /* piechartwheel.png */,
 				4DAA4981185FBBF2002C1E79 /* budget.png */,
-				4DAA4978185F8B61002C1E79 /* cost.png */,
-				4DAA4976185F8AD6002C1E79 /* realtime.png */,
 				4DAA4974185F88AA002C1E79 /* share.png */,
 				4DAA4972185F86B4002C1E79 /* graph.png */,
 				4DAA497A185F8EF3002C1E79 /* devices.png */,
@@ -423,9 +422,7 @@
 			files = (
 				4DDC4FAF182D641600B76923 /* Default@2x~iphone.png in Resources */,
 				4DAA496F185F592E002C1E79 /* fb.png in Resources */,
-				4D01FAEB186343210020311C /* bar chart.png in Resources */,
 				4DDC4FAE182D641600B76923 /* Default@2x-portrait.png in Resources */,
-				4D01FAED186345F50020311C /* pie chart.png in Resources */,
 				4DAA4973185F86B4002C1E79 /* graph.png in Resources */,
 				4DA3F017181B09DC007515C9 /* Main_iPad.storyboard in Resources */,
 				4DA3F01C181B09DD007515C9 /* Images.xcassets in Resources */,
@@ -433,13 +430,13 @@
 				4DA73B0F18624570009AEBED /* select.png in Resources */,
 				4DAA4982185FBBF2002C1E79 /* budget.png in Resources */,
 				4DAA4975185F88AA002C1E79 /* share.png in Resources */,
-				4DAA4979185F8B61002C1E79 /* cost.png in Resources */,
 				4DAA4980185F9938002C1E79 /* background.png in Resources */,
 				4DA3F014181B09DC007515C9 /* Main_iPhone.storyboard in Resources */,
 				4DA3F00B181B09DC007515C9 /* InfoPlist.strings in Resources */,
+				4D9392F618AAE1A000CABC0C /* piechart.png in Resources */,
 				4DAA497B185F8EF3002C1E79 /* devices.png in Resources */,
+				4D9392F418AAE19000CABC0C /* piechartwheel.png in Resources */,
 				4DA73B0E18624570009AEBED /* center.png in Resources */,
-				4DAA4977185F8AD6002C1E79 /* realtime.png in Resources */,
 				4DA73B1018624570009AEBED /* shadow.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -471,6 +468,7 @@
 				4DA73B0B18624570009AEBED /* PieChartView.m in Sources */,
 				4DEE83311882053700E5B77F /* ECGraph.m in Sources */,
 				4DA3F00D181B09DC007515C9 /* main.m in Sources */,
+				4D9392F218AADA8200CABC0C /* PieChartWheelViewController.m in Sources */,
 				4DEE83331882053700E5B77F /* ECGraphLine.m in Sources */,
 				4D4D45461833F31400329B9B /* RightToLeftStoryboardSegue.m in Sources */,
 				4DAA497E185F93B7002C1E79 /* DataClass.m in Sources */,

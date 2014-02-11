@@ -135,7 +135,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="SI7-g6-1j7">
                                 <rect key="frame" x="5" y="145" width="156" height="118"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="1"/>
                                 <state key="normal" backgroundImage="budget.png">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -148,7 +148,7 @@
                                 <rect key="frame" x="5" y="392" width="156" height="118"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                                <inset key="contentEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="75"/>
+                                <inset key="contentEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="82"/>
                                 <state key="normal" title="Device Control" backgroundImage="devices.png">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -161,7 +161,7 @@
                                 <rect key="frame" x="163" y="392" width="151" height="118"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                                <inset key="contentEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="39"/>
+                                <inset key="contentEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="82"/>
                                 <state key="normal" title="Share" backgroundImage="share.png">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -170,11 +170,11 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="XA1-FR-ocS">
-                                <rect key="frame" x="163" y="145" width="151" height="118"/>
+                                <rect key="frame" x="163" y="145" width="157" height="118"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                 <inset key="contentEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="82"/>
-                                <state key="normal" title="Real Time" backgroundImage="realtime.png">
+                                <state key="normal" title="Pie Chart Wheel" backgroundImage="piechartwheel.png">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -182,27 +182,28 @@
                                     <segue destination="muI-9H-cit" kind="modal" id="IQz-YP-OGX"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="WhO-rS-V9f">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="WhO-rS-V9f">
                                 <rect key="frame" x="5" y="271" width="156" height="118"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                <inset key="contentEdgeInsets" minX="21" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                <state key="normal" backgroundImage="cost.png">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <inset key="contentEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="82"/>
+                                <state key="normal" title="Pie Chart" backgroundImage="piechart.png">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="nRX-IU-EyH" kind="modal" id="73Z-ER-xbE"/>
+                                    <segue destination="6OR-5Y-Iwo" kind="modal" id="Mpv-r4-FOe"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="9Rf-Pj-d4M">
-                                <rect key="frame" x="163" y="271" width="151" height="118"/>
+                                <rect key="frame" x="163" y="271" width="157" height="118"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="graph.png">
+                                <state key="normal" title="Bar Chart" image="graph.png">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="6OR-5Y-Iwo" kind="modal" id="Nc9-Au-rOK"/>
+                                    <segue destination="QbF-0o-h5Q" kind="modal" id="YEd-FU-Mmz"/>
                                 </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="FPA-I0-AfI">
@@ -349,10 +350,10 @@
             </objects>
             <point key="canvasLocation" x="-2514" y="92"/>
         </scene>
-        <!--Real Time View Controller-->
+        <!--Pie Chart Wheel View Controller-->
         <scene sceneID="Gcg-c3-bmG">
             <objects>
-                <viewController id="muI-9H-cit" userLabel="Real Time View Controller" sceneMemberID="viewController">
+                <viewController id="muI-9H-cit" userLabel="Pie Chart Wheel View Controller" customClass="PieChartWheelViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="eAX-fZ-jaT">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -360,13 +361,13 @@
                             <navigationBar contentMode="scaleToFill" id="hRY-Ow-X8O">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="74"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <color key="barTintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="barTintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <textAttributes key="titleTextAttributes">
                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                     <color key="textColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </textAttributes>
                                 <items>
-                                    <navigationItem title="Usage" prompt=" " id="g4A-Yq-EWH">
+                                    <navigationItem title="Pie Chart" prompt=" " id="g4A-Yq-EWH">
                                         <barButtonItem key="leftBarButtonItem" title="&lt;" style="done" id="RGK-91-ye8">
                                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="frw-KT-jfE">
                                                 <rect key="frame" x="16" y="30" width="71" height="44"/>
@@ -406,12 +407,15 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" red="0.20000000000000001" green="0.80000000000000004" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="Vhv-G0-RAK" appends="YES" id="gJn-hK-R25"/>
                         </connections>
                     </view>
+                    <connections>
+                        <outlet property="IDlbl" destination="gcn-Ic-QjS" id="SeF-jg-hJX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ucz-em-ST9" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <swipeGestureRecognizer direction="right" id="Vhv-G0-RAK">
@@ -547,18 +551,6 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="VxS-Uz-tNP">
-                                <rect key="frame" x="250" y="513" width="70" height="55"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                                <state key="normal" image="bar chart.png">
-                                    <color key="titleColor" red="0.20000000000000001" green="1" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="QbF-0o-h5Q" kind="custom" customClass="RightToLeftStoryboardSegue" id="r2Q-bh-tFL"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="o3E-De-6Iv">
                                 <rect key="frame" x="20" y="455" width="280" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -653,79 +645,6 @@
                 </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-1675" y="92"/>
-        </scene>
-        <!--Cost View Controller-->
-        <scene sceneID="sb3-Qg-Mss">
-            <objects>
-                <viewController id="nRX-IU-EyH" userLabel="Cost View Controller" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="VOo-9s-H4a">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <navigationBar contentMode="scaleToFill" id="vIu-BG-7Yo">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="74"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <color key="barTintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <textAttributes key="titleTextAttributes">
-                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                                    <color key="textColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                </textAttributes>
-                                <items>
-                                    <navigationItem title="Cost" prompt=" " id="QLN-9O-C2Z">
-                                        <barButtonItem key="leftBarButtonItem" title="&lt;" style="done" id="VYt-md-Aed">
-                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="1U8-ug-mpV">
-                                                <rect key="frame" x="16" y="30" width="71" height="44"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
-                                                <state key="normal" title="&lt; Menu">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                </state>
-                                                <connections>
-                                                    <segue destination="PEW-BI-U6W" kind="modal" modalTransitionStyle="crossDissolve" id="fYX-Jv-FHn"/>
-                                                </connections>
-                                            </button>
-                                        </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" title="Log Out" style="done" id="668-u7-47D">
-                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Oso-0H-RjT">
-                                                <rect key="frame" x="233" y="30" width="71" height="44"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
-                                                <state key="normal" title="Log Out">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                </state>
-                                                <connections>
-                                                    <segue destination="vXZ-lx-hvc" kind="modal" modalTransitionStyle="flipHorizontal" id="Fh0-dc-Klh"/>
-                                                </connections>
-                                            </button>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="OIJ-cn-tDf">
-                                <rect key="frame" x="20" y="20" width="280" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" red="0.20000000000000001" green="0.80000000000000004" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
-                        <gestureRecognizers/>
-                        <connections>
-                            <outletCollection property="gestureRecognizers" destination="d0Z-ZN-uss" appends="YES" id="FP8-vf-pd3"/>
-                        </connections>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Sib-e5-j4b" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <swipeGestureRecognizer direction="right" id="d0Z-ZN-uss">
-                    <connections>
-                        <segue destination="bGS-04-UIf" kind="custom" customClass="LeftToRightStoryboardSegue" id="iSR-Mw-5ui"/>
-                    </connections>
-                </swipeGestureRecognizer>
-            </objects>
-            <point key="canvasLocation" x="-673" y="1119"/>
         </scene>
         <!--Share View Controller-->
         <scene sceneID="bbr-xS-dRe">
@@ -892,18 +811,6 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="u3x-PK-NbV">
-                                <rect key="frame" x="250" y="513" width="70" height="55"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                                <state key="normal" image="pie chart.png">
-                                    <color key="titleColor" red="0.20000000000000001" green="1" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="6OR-5Y-Iwo" kind="custom" customClass="LeftToRightStoryboardSegue" id="Phj-HF-mtU"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="CDg-Bz-P8y">
                                 <rect key="frame" x="20" y="20" width="280" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -929,19 +836,17 @@
                     </connections>
                 </swipeGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="-172" y="427"/>
+            <point key="canvasLocation" x="-673" y="1119"/>
         </scene>
     </scenes>
     <resources>
         <image name="background.png" width="1024" height="1024"/>
-        <image name="bar chart.png" width="70" height="55"/>
         <image name="budget.png" width="161" height="118"/>
-        <image name="cost.png" width="151" height="118"/>
         <image name="devices.png" width="161" height="118"/>
         <image name="fb.png" width="90" height="94"/>
         <image name="graph.png" width="151" height="118"/>
-        <image name="pie chart.png" width="70" height="55"/>
-        <image name="realtime.png" width="151" height="118"/>
+        <image name="piechart.png" width="151" height="118"/>
+        <image name="piechartwheel.png" width="151" height="118"/>
         <image name="share.png" width="161" height="118"/>
         <image name="twitter.png" width="90" height="94"/>
     </resources>
@@ -951,9 +856,8 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="uub-Y2-2pe"/>
-        <segue reference="WPD-vo-x7N"/>
-        <segue reference="Phj-HF-mtU"/>
-        <segue reference="o41-V3-OzK"/>
+        <segue reference="i9g-NP-BoT"/>
+        <segue reference="tz6-a2-cwn"/>
+        <segue reference="5AF-rY-1z7"/>
     </inferredMetricsTieBreakers>
 </document>
