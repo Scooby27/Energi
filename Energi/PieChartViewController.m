@@ -78,24 +78,7 @@
     [self.pieChartView setTitleText:@"Energy"];
     self.title = @"Cost";
     
-    
-//    // Display error message if unsuccessful connection.
-//    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Connection Warning!" message:@"Cannot connect to Energi database. Please check your internet connection and try again." delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
-//    // Sets up warning alert.
-//    
-//    [alert show];
-//    // Show the alert.
-    
-    
 }
-
-- (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex{
-    // When the user achknowledges the warning, the app segues to the mani menu.
-    if([[alertView title] isEqualToString:@"Connection Warning!"]){
-        [self performSegueWithIdentifier:@"segue.to.menu" sender:self];
-    }
-}
-
 
 - (UIColor *) colorFromHexRGB:(NSString *) inColorString
 {
@@ -135,7 +118,7 @@
     [self.pieChartView reloadChart];
     
     if (self.inOut) {
-        [self.pieChartView setTitleText:@"Appliances"];
+        [self.pieChartView setTitleText:@"Energy"];
         
     }else{
         [self.pieChartView setTitleText:@"Cost"];

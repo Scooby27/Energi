@@ -62,17 +62,17 @@
         
         ECGraphItem *item = [[ECGraphItem alloc] init];
         item.isPercentage = NO;
-        item.yValue = value;
+        item.yValue = value/1000;
         item.width = barLength;
         item.name = [titleArray objectAtIndex:i];
         item.color =[colorArray objectAtIndex:i];
-        item.max = 1.2*max;
+        item.max = 1.2*(max/1000);
         item.per = per;
         [items addObject:item];
     }
     
     [graph setXaxisTitle:@"Time of Day"];
-    [graph setYaxisTitle:@"Energy Consumption (Wh)"];
+    [graph setYaxisTitle:@"Energy Consumption (kWh)"];
     [graph setGraphicTitle:[NSString stringWithFormat:@"Activity over Day: %@", obj.dataDate]];
     [graph setDelegate:self];
     [graph setBackgroundColor:[UIColor whiteColor]];

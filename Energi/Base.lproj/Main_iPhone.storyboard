@@ -125,7 +125,7 @@
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <connections>
-                                                    <segue destination="vXZ-lx-hvc" kind="modal" modalTransitionStyle="crossDissolve" id="tz6-a2-cwn"/>
+                                                    <segue destination="vXZ-lx-hvc" kind="modal" identifier="segue.to.mainscreen" modalTransitionStyle="crossDissolve" id="tz6-a2-cwn"/>
                                                 </connections>
                                             </button>
                                         </barButtonItem>
@@ -133,10 +133,11 @@
                                 </items>
                             </navigationBar>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="SI7-g6-1j7">
-                                <rect key="frame" x="5" y="145" width="156" height="118"/>
+                                <rect key="frame" x="5" y="145" width="156" height="120"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="1"/>
-                                <state key="normal" backgroundImage="budget.png">
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <inset key="contentEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="82"/>
+                                <state key="normal" title="Budget" backgroundImage="budget.png">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -198,7 +199,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="9Rf-Pj-d4M">
                                 <rect key="frame" x="163" y="271" width="157" height="118"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="graph.png">
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <inset key="contentEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="82"/>
+                                <state key="normal" title="Bar Graph" backgroundImage="graph.png">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -856,7 +859,7 @@
     </scenes>
     <resources>
         <image name="background.png" width="1024" height="1024"/>
-        <image name="budget.png" width="161" height="118"/>
+        <image name="budget.png" width="118" height="161"/>
         <image name="devices.png" width="161" height="118"/>
         <image name="fb.png" width="90" height="94"/>
         <image name="graph.png" width="151" height="118"/>
@@ -872,7 +875,7 @@
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="M06-Tk-Hoc"/>
-        <segue reference="U0a-BE-Mnw"/>
-        <segue reference="I9a-1R-4kF"/>
+        <segue reference="tz6-a2-cwn"/>
+        <segue reference="5AF-rY-1z7"/>
     </inferredMetricsTieBreakers>
 </document>

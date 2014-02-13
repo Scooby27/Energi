@@ -36,7 +36,7 @@
     }
 }
 
-- (BOOL) retrieveData{
+- (void) retrieveData{
     
     DataClass *obj = [DataClass getInstance];
     obj.titleArray = [[NSMutableArray alloc] init];
@@ -48,15 +48,20 @@
     
     NSString *getDataURL = [NSString stringWithFormat:@"http://localhost/%@.php", houseID];
     NSURL *url = [NSURL URLWithString:getDataURL];
-    NSData *data = [NSData dataWithContentsOfURL:url];
+    NSError *error = nil;
+    NSData *data = [NSData dataWithContentsOfURL:url options:NSDataReadingUncached error:&error];
     
-    _json = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
-    
-    if(!_json){ // If cannot connect to database, return false.
+    if (error) {
+        // Display error message if unsuccessful connection.
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Connection Warning!" message:@"Cannot connect to Energi database. Please check your internet connection and try again." delegate:self cancelButtonTitle:@"Log Out" otherButtonTitles: nil];
+        // Sets up warning alert.
         
-        return false;
+        [alert show];
+        // Show the alert.
+
+    } else {
+        _json = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
         
-    }else{
         NSString *dateAndTime;
         NSString *value;
         // Initialise time and value strings.
@@ -246,10 +251,14 @@
             //            [self.colorArray2 addObject:[UIColor colorWithHue:((odd*i/segmentCount)%20)/20.0+0.1 saturation:(even*i%segmentCount+3)/10.0 brightness:91/100.0 alpha:1]];
             
         }
-        
-        return true;
     }
-    
+}
+
+- (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex{
+    // When the user achknowledges the warning, the app segues to the mani menu.
+    if([[alertView title] isEqualToString:@"Connection Warning!"]){
+        [self performSegueWithIdentifier:@"segue.to.mainscreen" sender:self];
+    }
 }
 
 - (void)didReceiveMemoryWarning
