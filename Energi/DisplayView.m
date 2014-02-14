@@ -47,7 +47,6 @@
     float max = 0;
     for (int i = 0; i < categories_count; i++){
         float value = [[valueArray objectAtIndex:i] floatValue];
-        
         if (max < value){
             max = value;
         }
@@ -66,9 +65,14 @@
         item.width = barLength;
         item.name = [titleArray objectAtIndex:i];
         item.color =[colorArray objectAtIndex:i];
-        item.max = 1.2*(max/1000);
+        if(max/1000 < 3){
+            item.max = 6;
+        }else{
+            item.max = 1.2*(max/1000);
+        }
         item.per = per;
         [items addObject:item];
+    
     }
     
     [graph setXaxisTitle:@"Time of Day"];
