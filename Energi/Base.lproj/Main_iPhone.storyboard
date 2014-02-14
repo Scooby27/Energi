@@ -80,11 +80,26 @@
                                     <action selector="registerAlert:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="RrD-C0-YMv"/>
                                 </connections>
                             </button>
+                            <label hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="eH2-Dc-wgq">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.20000000000000001" green="0.80000000000000004" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="whiteLarge" id="c1l-RG-4qp">
+                                <rect key="frame" x="142" y="265" width="37" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="0.20000000000000001" green="0.80000000000000004" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <navigationItem key="navigationItem" id="XD4-8A-hvp"/>
                     <connections>
+                        <outlet property="hideAll" destination="eH2-Dc-wgq" id="M5f-Pt-5da"/>
+                        <outlet property="loading" destination="c1l-RG-4qp" id="6m7-ZC-ZvI"/>
                         <outlet property="textField" destination="8F5-Yb-3OT" id="0ch-yq-W22"/>
                         <outlet property="textField1" destination="tzu-n3-Zom" id="k4R-xE-Wdx"/>
                     </connections>

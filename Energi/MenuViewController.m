@@ -51,7 +51,11 @@
     NSError *error = nil;
     NSData *data = [NSData dataWithContentsOfURL:url options:NSDataReadingUncached error:&error];
     
-    if (error) {
+    if (!error){
+        _json = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
+    }
+
+    if (error || !_json) {
         // Display error message if unsuccessful connection.
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Connection Warning!" message:@"Cannot connect to Energi database. Please check your internet connection and try again." delegate:self cancelButtonTitle:@"Log Out" otherButtonTitles: nil];
         // Sets up warning alert.
@@ -60,7 +64,6 @@
         // Show the alert.
 
     } else {
-        _json = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
         
         NSString *dateAndTime;
         NSString *value;
@@ -252,6 +255,7 @@
             
         }
     }
+    
 }
 
 - (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex{

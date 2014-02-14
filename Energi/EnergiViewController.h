@@ -23,8 +23,12 @@
 
 @property (weak, nonatomic) IBOutlet UITextField *textField1;
 
+@property (strong, nonatomic) IBOutlet UIActivityIndicatorView *loading;
+
 @property (copy, nonatomic) NSString *houseID;
 
 @property (copy, nonatomic) NSString *password;
+
+@property (nonatomic) IBOutlet UILabel *hideAll;
 
 @end

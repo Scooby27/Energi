@@ -36,6 +36,12 @@
     obj.titleArray = [[NSMutableArray alloc] init];
     // Clears any value each user.
     
+    [self.loading setHidden:true];
+    // Hides loading view.
+    
+    [self.hideAll setHidden:true];
+    // Unhides all other objects in view.
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -65,6 +71,13 @@
 
 - (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex
 {
+    
+    [self.loading setHidden:true];
+    // Hides loading view.
+    
+    [self.hideAll setHidden:true];
+    // Unhide all objects in the view.
+    
     NSString *title = [alertView buttonTitleAtIndex:buttonIndex];
     // Get the title of the button pressed.
     
@@ -193,6 +206,20 @@
 
 - (IBAction)login:(id)sender {
     
+    [self.loading setHidden:false];
+    // Show loading.
+    
+    [self.hideAll setHidden:false];
+    // Hide all other objects on screen.
+    
+    [self performSelector: @selector(performLogin)
+               withObject: nil
+               afterDelay: 0.001];
+    
+    
+}
+
+-(void)performLogin{
     DataClass *obj = [DataClass getInstance];
     // Used for global variables.
     
@@ -214,7 +241,7 @@
     
     houseIDString = [houseIDString lowercaseString];
     // Username not case sensitive.
-  
+    
     NSUInteger passwordHashInt = [self.password hash];
     // Creates a hash value of the password for security.
     
@@ -256,6 +283,7 @@
                 UIViewController *vc = [mainSB instantiateViewControllerWithIdentifier:@"energiMenuView"];
                 [self presentViewController:vc animated:YES completion:nil];
                 // If correct login then continue to app.
+                
             }else{
                 UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Login Warning!" message:@"Please enter a valid House ID and password." delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
                 // Sets up warning alert.
@@ -265,7 +293,7 @@
             }
             
         }
-
+        
     }else{
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Login Warning!" message:@"One or more fields are blank. Please enter your login details." delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
         // Sets up warning alert.
@@ -273,9 +301,8 @@
         [alert show];
         // Show the alert.
     }
-    
-}
 
+}
 
 - (BOOL)textFieldShouldReturn:(UITextField *)theTextField {
     
@@ -286,6 +313,8 @@
         
     if (theTextField == self.textField1){
         [theTextField resignFirstResponder];
+        [self.loading setHidden:false];
+        [self.hideAll setHidden:false];
         [self login:self];
         // Automatically logs in when 'Go' is pressed.
     }
