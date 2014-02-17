@@ -49,6 +49,10 @@
     self.colorArray = obj.colorArray;
     self.titleArray = obj.titleArray;
     
+    self.valueArray2 = obj.valueArray2;
+    self.colorArray2 = obj.colorArray2;
+    self.titleArray2 = obj.titleArray2;
+    
     //add shadow img
     CGRect pieFrame = CGRectMake((self.view.frame.size.width - PIE_HEIGHT) / 2, 100-0, PIE_HEIGHT, PIE_HEIGHT);
     
@@ -103,8 +107,13 @@
 }
 
 - (void)selectedFinish:(PieChartView *)pieChartView index:(NSInteger)index percent:(float)per title:(NSString *)title{
-    self.selLabel.text = [NSString stringWithFormat:@"Time of Day: %@ - %@", title, [NSString stringWithFormat:@"%.2f kWh", per/1000]];
-    [self.pieChartView setAmountText:[NSString stringWithFormat:@"%.2f kWh", per/1000]];
+    self.selLabel.text = [NSString stringWithFormat:@"Time of Day: %@", title];
+    if(self.inOut){
+        [self.pieChartView setAmountText:[NSString stringWithFormat:@"%.2f kWh", per/1000]];
+    }else{
+        [self.pieChartView setAmountText:[NSString stringWithFormat:@"£%.2f", 0.09*per/1000]];
+    }
+    
 }
 
 - (void)onCenterClick:(PieChartView *)pieChartView
@@ -112,7 +121,7 @@
     self.inOut = !self.inOut;
     self.pieChartView.delegate = nil;
     [self.pieChartView removeFromSuperview];
-    self.pieChartView = [[PieChartView alloc]initWithFrame:self.pieContainer.bounds withValue:self.valueArray withColor:self.inOut?self.colorArray:self.colorArray2 withTitle:self.titleArray withCenter:true];
+    self.pieChartView = [[PieChartView alloc]initWithFrame:self.pieContainer.bounds withValue:self.valueArray withColor:self.inOut?self.colorArray:self.colorArray2 withTitle:self.inOut?self.titleArray:self.titleArray2 withCenter:true];
     self.pieChartView.delegate = self;
     [self.pieContainer addSubview:self.pieChartView];
     [self.pieChartView reloadChart];

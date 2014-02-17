@@ -34,9 +34,21 @@
     
     DataClass *obj = [DataClass getInstance];
     
-    NSArray *valueArray = obj.valueArray;
-    NSArray *colorArray = obj.colorArray;
-    NSArray *titleArray = obj.titleArray;
+    BOOL barGraphChangeUnit = obj.barGraphChangeUnit;
+    
+    NSArray *valueArray = [[NSArray alloc] init];
+    NSArray *colorArray = [[NSArray alloc] init];
+    NSArray *titleArray = [[NSArray alloc] init];
+    
+    if(barGraphChangeUnit){
+        valueArray = obj.valueArray;
+        colorArray = obj.colorArray;
+        titleArray = obj.titleArray;
+    }else{
+        valueArray = obj.valueArray2;
+        colorArray = obj.colorArray2;
+        titleArray = obj.titleArray2;
+    }
     
     int categories_count = (int)[valueArray count];
     int barLength = 175/categories_count;
@@ -61,12 +73,18 @@
         
         ECGraphItem *item = [[ECGraphItem alloc] init];
         item.isPercentage = NO;
-        item.yValue = value/1000;
+        if (barGraphChangeUnit){
+            item.yValue = value/1000;
+        }else{
+            item.yValue = 0.09*value/1000;
+            max = 0.09*max;
+        }
+        
         item.width = barLength;
         item.name = [titleArray objectAtIndex:i];
         item.color =[colorArray objectAtIndex:i];
-        if(max/1000 < 3){
-            item.max = 6;
+        if(max/1000 < 4){
+            item.max = 4;
         }else{
             item.max = 1.2*(max/1000);
         }
@@ -76,7 +94,12 @@
     }
     
     [graph setXaxisTitle:@"Time of Day"];
-    [graph setYaxisTitle:@"Energy Consumption (kWh)"];
+    if(barGraphChangeUnit){
+        [graph setYaxisTitle:@"Energy Consumption (kWh)"];
+    }else{
+        [graph setYaxisTitle:@"Cost of Consumption (£)"];
+    }
+    
     [graph setGraphicTitle:[NSString stringWithFormat:@"Activity over Day: %@", obj.dataDate]];
     [graph setDelegate:self];
     [graph setBackgroundColor:[UIColor whiteColor]];

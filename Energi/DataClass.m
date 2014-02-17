@@ -17,7 +17,11 @@
 @synthesize valueArray;
 @synthesize colorArray;
 @synthesize titleArray;
+@synthesize valueArray2;
+@synthesize colorArray2;
+@synthesize titleArray2;
 @synthesize dataDate;
+@synthesize barGraphChangeUnit;
 
 static DataClass *instance = nil;
 

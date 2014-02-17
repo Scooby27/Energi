@@ -279,6 +279,8 @@
             if (successfulLogin){
                 
                 obj.houseID = houseIDString;
+                // Sets the houseID string for the session.
+                
                 UIStoryboard *mainSB = [UIStoryboard storyboardWithName: @"Main_iPhone" bundle:nil];
                 UIViewController *vc = [mainSB instantiateViewControllerWithIdentifier:@"energiMenuView"];
                 [self presentViewController:vc animated:YES completion:nil];

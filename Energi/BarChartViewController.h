@@ -13,10 +13,11 @@
 #import "ECGraphLine.h"
 #import "ECGraphItem.h"
 #import "DataClass.h"
+#import "DisplayView.h"
 
 
 @interface BarChartViewController : UIViewController
 
 @property (weak, nonatomic) IBOutlet UILabel *IDlbl;
-
+@property (nonatomic, strong) IBOutlet UIButton *changeUnitsButton;
 @end

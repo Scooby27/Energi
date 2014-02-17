@@ -19,6 +19,7 @@
     self.titleArray = nil;
     self.valueArray2 = nil;
     self.colorArray2 = nil;
+    self.titleArray2 = nil;
     self.pieContainer = nil;
     self.selLabel = nil;
 }
@@ -48,6 +49,9 @@
     self.valueArray = obj.valueArray;
     self.colorArray = obj.colorArray;
     self.titleArray = obj.titleArray;
+    self.valueArray2 = obj.valueArray2;
+    self.colorArray2 = obj.colorArray2;
+    self.titleArray2 = obj.titleArray2;
     
     //add shadow img
     CGRect pieFrame = CGRectMake((self.view.frame.size.width - PIE_HEIGHT) / 2, 100-0, PIE_HEIGHT, PIE_HEIGHT);
@@ -103,8 +107,25 @@
 }
 
 - (void)selectedFinish:(PieChartView *)pieChartView index:(NSInteger)index percent:(float)per title:(NSString *)title{
-    self.selLabel.text = [NSString stringWithFormat:@"Time of Day: %@ - %@", title, [NSString stringWithFormat:@"%.2f kWh", per/1000]];
-    [self.pieChartView setAmountText:[NSString stringWithFormat:@"%.2f kWh", per/1000]];
+    
+    if(self.inOut){
+        self.selLabel.text = [NSString stringWithFormat:@"Time of Day: %@ - %@", title, [NSString stringWithFormat:@"%.2f kWh", per/1000]];
+    }else{
+        self.selLabel.text = [NSString stringWithFormat:@"Time of Day: %@ - %@", title, [NSString stringWithFormat:@"£%.2f", 0.09*per/1000]];
+    }
+}
+
+- (IBAction)changeUnits:(id)sender{
+    
+    [self onCenterClick:self.pieChartView];
+    // Without a centre, a separate button is pressed to give the same effect.
+    
+    if (self.inOut){
+        [self.changeUnitsButton setTitle:@"Cost" forState:UIControlStateNormal];
+    }else{
+        [self.changeUnitsButton setTitle:@"Energy" forState:UIControlStateNormal];
+    }
+    // Change text depending on current setting.
 }
 
 - (void)onCenterClick:(PieChartView *)pieChartView
@@ -112,17 +133,10 @@
     self.inOut = !self.inOut;
     self.pieChartView.delegate = nil;
     [self.pieChartView removeFromSuperview];
-    self.pieChartView = [[PieChartView alloc]initWithFrame:self.pieContainer.bounds withValue:self.valueArray withColor:self.inOut?self.colorArray:self.colorArray2 withTitle:self.titleArray withCenter:false];
+    self.pieChartView = [[PieChartView alloc]initWithFrame:self.pieContainer.bounds withValue:self.valueArray withColor:self.inOut?self.colorArray:self.colorArray2 withTitle:self.inOut?self.titleArray:self.titleArray2 withCenter:false];
     self.pieChartView.delegate = self;
     [self.pieContainer addSubview:self.pieChartView];
     [self.pieChartView reloadChart];
-    
-    if (self.inOut) {
-        [self.pieChartView setTitleText:@"Energy"];
-        
-    }else{
-        [self.pieChartView setTitleText:@"Cost"];
-    }
 }
 
 - (void)viewDidAppear:(BOOL)animated

@@ -30,6 +30,9 @@
     self.IDlbl.text = [NSString stringWithFormat:@"ID: %@", obj.houseID];
     // Creates a label notifying the household that is currently logged in.
     
+    obj.barGraphChangeUnit = true;
+    // Initialises the boolean for changing units in the bar graph.
+    
     if (!obj.hasLoaded){
         obj.hasLoaded = true;
         [self retrieveData];
@@ -42,6 +45,9 @@
     obj.titleArray = [[NSMutableArray alloc] init];
     obj.valueArray = [[NSMutableArray alloc] init];
     obj.colorArray = [[NSMutableArray alloc] init];
+    obj.titleArray2 = [[NSMutableArray alloc] init];
+    obj.valueArray2 = [[NSMutableArray alloc] init];
+    obj.colorArray2 = [[NSMutableArray alloc] init];
     obj.dataDate = [[NSString alloc] init];
     
     NSString *houseID = obj.houseID;
@@ -105,8 +111,11 @@
             NSString *time = [dtComp objectAtIndex:1];
             if (i == 0){date = [dtComp objectAtIndex:0]; obj.dataDate = date;}
             [obj.titleArray addObject:time];
+            [obj.titleArray2 addObject:time];
             
             [obj.valueArray addObject:[dtValues objectAtIndex:i]];
+            [obj.valueArray2 addObject:[dtValues objectAtIndex:i]];
+            
         }
         
         //    NSString *urlString = @"http://textuploader.com/1ret/raw";
@@ -240,18 +249,19 @@
         
         int segmentCount = (int)[obj.valueArray count];
         
-        //        self.colorArray = [NSMutableArray arrayWithObjects:nil];
-        //        self.colorArray2 = [NSMutableArray arrayWithObjects:nil];
-        
         for (int i = 0; i < segmentCount; i++){
             int odd = 4;
+            int odd2 = 3;
             int even = 1;
+            int even2 = 1;
             if (i%2 == 0){
                 odd = 1;
+                odd2 = 1;
                 even = 4;
+                even2 = 3;
             }
             [obj.colorArray addObject:[UIColor colorWithHue:((odd*i/segmentCount)%20)/20.0+0.28 saturation:(even*i%segmentCount+3)/10.0 brightness:91/100.0 alpha:1]];
-            //            [self.colorArray2 addObject:[UIColor colorWithHue:((odd*i/segmentCount)%20)/20.0+0.1 saturation:(even*i%segmentCount+3)/10.0 brightness:91/100.0 alpha:1]];
+            [obj.colorArray2 addObject:[UIColor colorWithHue:((odd2*i/segmentCount)%20)/20.0+0.075 saturation:(even2*i%segmentCount+3)/10.0 brightness:91/100.0 alpha:1]];
             
         }
     }

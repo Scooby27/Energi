@@ -598,6 +598,18 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="YnP-Wg-lAL">
+                                <rect key="frame" x="220" y="484" width="80" height="64"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <state key="normal" title="Cost">
+                                    <color key="titleColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="changeUnits:" destination="6OR-5Y-Iwo" eventType="touchUpInside" id="0UO-dQ-d6I"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
@@ -607,6 +619,7 @@
                     </view>
                     <connections>
                         <outlet property="IDlbl" destination="uRD-Ae-MzM" id="oy4-p8-yfn"/>
+                        <outlet property="changeUnitsButton" destination="YnP-Wg-lAL" id="HQ9-bd-pq9"/>
                         <outlet property="displayRangeLbl" destination="o3E-De-6Iv" id="8iv-3N-neo"/>
                         <segue destination="PEW-BI-U6W" kind="modal" identifier="segue.to.menu" id="fbY-Pd-0Bm"/>
                     </connections>
@@ -851,6 +864,19 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="XLw-ko-PuJ">
+                                <rect key="frame" x="220" y="484" width="80" height="64"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <state key="normal">
+                                    <color key="titleColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="changeUnits:" destination="QbF-0o-h5Q" eventType="touchUpInside" id="IvY-kv-t5f"/>
+                                    <segue destination="QbF-0o-h5Q" kind="custom" identifier="segue.to.self" customClass="RightToLeftStoryboardSegue" id="SOC-x7-W5q"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
@@ -860,6 +886,7 @@
                     </view>
                     <connections>
                         <outlet property="IDlbl" destination="CDg-Bz-P8y" id="bxn-ie-c6J"/>
+                        <outlet property="changeUnitsButton" destination="XLw-ko-PuJ" id="EiB-2Z-ecH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JHx-EZ-Pd3" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -889,8 +916,9 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="M06-Tk-Hoc"/>
-        <segue reference="tz6-a2-cwn"/>
-        <segue reference="5AF-rY-1z7"/>
+        <segue reference="i9g-NP-BoT"/>
+        <segue reference="YEd-FU-Mmz"/>
+        <segue reference="Z2r-Tq-io6"/>
+        <segue reference="A5d-X6-xb4"/>
     </inferredMetricsTieBreakers>
 </document>
