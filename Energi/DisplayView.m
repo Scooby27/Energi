@@ -25,7 +25,7 @@
 
 // Only override drawRect: if you perform custom drawing.
 // An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
+- (void)drawRect:(CGRect)rect{
     
     // Drawing code
 	CGContextRef _context = UIGraphicsGetCurrentContext();
@@ -34,20 +34,27 @@
     
     DataClass *obj = [DataClass getInstance];
     
+    int startValue = obj.startValue;
+    int endValue = obj.endValue;
+    
     BOOL barGraphChangeUnit = obj.barGraphChangeUnit;
     
-    NSArray *valueArray = [[NSArray alloc] init];
-    NSArray *colorArray = [[NSArray alloc] init];
-    NSArray *titleArray = [[NSArray alloc] init];
+    NSMutableArray *valueArray = [[NSMutableArray alloc] init];
+    NSMutableArray *colorArray = [[NSMutableArray alloc] init];
+    NSMutableArray *titleArray = [[NSMutableArray alloc] init];
     
     if(barGraphChangeUnit){
-        valueArray = obj.valueArray;
-        colorArray = obj.colorArray;
-        titleArray = obj.titleArray;
+        for (int i = startValue; i <= endValue; i++){
+            [valueArray addObject:[obj.valueArray objectAtIndex:i]];
+            [titleArray addObject:[obj.titleArray objectAtIndex:i]];
+            [colorArray addObject:[obj.colorArray objectAtIndex:i]];
+        }
     }else{
-        valueArray = obj.valueArray2;
-        colorArray = obj.colorArray2;
-        titleArray = obj.titleArray2;
+        for (int i = startValue; i <= endValue; i++){
+            [valueArray addObject:[obj.valueArray2 objectAtIndex:i]];
+            [titleArray addObject:[obj.titleArray2 objectAtIndex:i]];
+            [colorArray addObject:[obj.colorArray2 objectAtIndex:i]];
+        }
     }
     
     int categories_count = (int)[valueArray count];
@@ -83,8 +90,8 @@
         item.width = barLength;
         item.name = [titleArray objectAtIndex:i];
         item.color =[colorArray objectAtIndex:i];
-        if(max/1000 < 4){
-            item.max = 4;
+        if(max/1000 < 5){
+            item.max = 5;
         }else{
             item.max = 1.2*(max/1000);
         }

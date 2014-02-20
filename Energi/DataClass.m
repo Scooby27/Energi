@@ -20,7 +20,10 @@
 @synthesize valueArray2;
 @synthesize colorArray2;
 @synthesize titleArray2;
+@synthesize dateArray;
 @synthesize dataDate;
+@synthesize startValue;
+@synthesize endValue;
 @synthesize barGraphChangeUnit;
 
 static DataClass *instance = nil;

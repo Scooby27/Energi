@@ -48,7 +48,7 @@
     obj.titleArray2 = [[NSMutableArray alloc] init];
     obj.valueArray2 = [[NSMutableArray alloc] init];
     obj.colorArray2 = [[NSMutableArray alloc] init];
-    obj.dataDate = [[NSString alloc] init];
+    obj.dateArray = [[NSMutableArray alloc] init];
     
     NSString *houseID = obj.houseID;
     
@@ -79,7 +79,8 @@
         NSMutableArray *dtValues = [[NSMutableArray alloc] init];
         // Initialise arrays to store which times have been seen previously, so that a total can be calculated.
         
-        NSString * date = [[NSString alloc] init];
+        NSString *date = [[NSString alloc] init];
+        NSString *prevDate = [[NSString alloc] init];
         
         for(int i = 0; i < [_json count]; i++){
             
@@ -105,18 +106,32 @@
             
         }
         
+        int dateCounter = 0;
+        
         for (int i = 0; i < [datesAndTimes count]; i++){
+            
+            prevDate = date;
+            
             NSString *dt = [datesAndTimes objectAtIndex:i];
             NSArray *dtComp = [dt componentsSeparatedByString:@" "];
             NSString *time = [dtComp objectAtIndex:1];
-            if (i == 0){date = [dtComp objectAtIndex:0]; obj.dataDate = date;}
+            date = [dtComp objectAtIndex:0];
+            
             [obj.titleArray addObject:time];
             [obj.titleArray2 addObject:time];
             
             [obj.valueArray addObject:[dtValues objectAtIndex:i]];
             [obj.valueArray2 addObject:[dtValues objectAtIndex:i]];
             
+            if (![prevDate isEqualToString:date]){
+                [obj.dateArray addObject:date];
+                [obj.dateArray addObject:[NSString stringWithFormat:@"%d", dateCounter]];
+            }
+            dateCounter++;
         }
+        
+        [obj.dateArray addObject:@""];
+        [obj.dateArray addObject:[NSString stringWithFormat:@"%d", dateCounter-1]];
         
         //    NSString *urlString = @"http://textuploader.com/1ret/raw";
         //    // Retrieves the list of house IDs and respective appliances.

@@ -16,8 +16,10 @@
 #import "DisplayView.h"
 
 
-@interface BarChartViewController : UIViewController
+@interface BarChartViewController : UIViewController <UIPickerViewDataSource,UIPickerViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UILabel *IDlbl;
 @property (nonatomic, strong) IBOutlet UIButton *changeUnitsButton;
+@property (nonatomic, retain) IBOutlet UIPickerView *picker;
+
 @end

@@ -25,6 +25,9 @@
 @property (nonatomic,strong) NSMutableArray *valueArray2;
 @property (nonatomic,strong) NSMutableArray *colorArray2;
 @property (nonatomic,strong) NSMutableArray *titleArray2;
+@property (nonatomic, strong) NSMutableArray *dateArray;
+@property (nonatomic) int startValue;
+@property (nonatomic) int endValue;
 @property (nonatomic,retain) NSString *dataDate;
 
 +(DataClass*)getInstance;
