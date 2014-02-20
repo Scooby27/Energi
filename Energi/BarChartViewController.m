@@ -32,6 +32,11 @@
     // Change text depending on current setting.
     
     self.picker.delegate = self;
+    // Shows the picker on the view.
+    
+    obj.startValue = [[obj.dateArray objectAtIndex:1] intValue];
+    obj.endValue = [[obj.dateArray objectAtIndex:3] intValue];
+    // Instantly starts the picker by setting the values to the first date.
 
 }
 
@@ -71,6 +76,11 @@
     obj.barGraphChangeUnit = !obj.barGraphChangeUnit;
     // When the button is pressed, change the boolean variable to the opposite of its current value.
     
+    [self performSegueWithIdentifier:@"segue.to.self" sender:self];
+    // Reload the view to update values on bar graph.
+}
+
+- (IBAction)changeDate:(id)sender{
     [self performSegueWithIdentifier:@"segue.to.self" sender:self];
     // Reload the view to update values on bar graph.
 }

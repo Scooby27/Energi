@@ -228,7 +228,7 @@ static inline double radians(double degrees){
 -(void)drawXYAxisTitleWithColor:(UIColor *)color
 {
 	[color set];
-	UILabel *lb_xaxisTitle = [[UILabel alloc] initWithFrame:CGRectMake(_xaxisStart.x, _xaxisStart.y + 100 , _xaxisLength, 30)];
+	UILabel *lb_xaxisTitle = [[UILabel alloc] initWithFrame:CGRectMake(_xaxisStart.x, _xaxisStart.y + 50, _xaxisLength, 30)];
 	lb_xaxisTitle.text = _xaxisTitle;
 	lb_xaxisTitle.textAlignment = NSTextAlignmentCenter;
 	lb_xaxisTitle.backgroundColor = [UIColor clearColor];
