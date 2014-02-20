@@ -26,16 +26,7 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     
-    DataClass *obj = [DataClass getInstance];
-    obj.budget = 55;
-    obj.hasLoaded = false;
-    obj.houseID = @"";
-    obj.sourceview = [[UIViewController alloc] init];
-    obj.colorArray = [[NSMutableArray alloc] init];
-    obj.valueArray = [[NSMutableArray alloc] init];
-    obj.titleArray = [[NSMutableArray alloc] init];
-    // Clears any value each user.
-    
+    [self deallocate];
     [self.loading setHidden:true];
     // Hides loading view.
     
@@ -44,6 +35,27 @@
     
 }
 
+-(void)deallocate{
+    DataClass *obj = [DataClass getInstance];
+    obj.budget = 55;
+    obj.hasLoaded = false;
+    obj.hasLoaded = false;
+    obj.houseID = @"";
+    obj.sourceview = [[UIViewController alloc] init];
+    obj.colorArray = [[NSMutableArray alloc] init];
+    obj.valueArray = [[NSMutableArray alloc] init];
+    obj.titleArray = [[NSMutableArray alloc] init];
+    obj.colorArray2 = [[NSMutableArray alloc] init];
+    obj.titleArray2 = [[NSMutableArray alloc] init];
+    obj.valueArray2 = [[NSMutableArray alloc] init];
+    obj.dateArray = [[NSMutableArray alloc] init];
+    obj.dataDate = [[NSString alloc] init];
+    obj.startValue = 0;
+    obj.endValue = 0;
+    obj.barGraphChangeUnit = true;
+    // Clears any value each user.
+
+}
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];

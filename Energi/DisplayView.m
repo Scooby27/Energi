@@ -47,14 +47,15 @@
         for (int i = startValue; i <= endValue; i++){
             [valueArray addObject:[obj.valueArray objectAtIndex:i]];
             [titleArray addObject:[obj.titleArray objectAtIndex:i]];
-            [colorArray addObject:[obj.colorArray objectAtIndex:i]];
         }
+        colorArray = obj.colorArray;
     }else{
         for (int i = startValue; i <= endValue; i++){
             [valueArray addObject:[obj.valueArray2 objectAtIndex:i]];
             [titleArray addObject:[obj.titleArray2 objectAtIndex:i]];
-            [colorArray addObject:[obj.colorArray2 objectAtIndex:i]];
         }
+        
+        colorArray = obj.colorArray2;
     }
     
     int categories_count = (int)[valueArray count];

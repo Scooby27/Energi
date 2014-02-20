@@ -25,7 +25,6 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     
-    
     DataClass *obj = [DataClass getInstance];
     self.IDlbl.text = [NSString stringWithFormat:@"ID: %@", obj.houseID];
     // Creates a label notifying the household that is currently logged in.
@@ -116,6 +115,8 @@
             NSArray *dtComp = [dt componentsSeparatedByString:@" "];
             NSString *time = [dtComp objectAtIndex:1];
             date = [dtComp objectAtIndex:0];
+            
+            if (i == 0){obj.dataDate = date;}
             
             [obj.titleArray addObject:time];
             [obj.titleArray2 addObject:time];
@@ -262,7 +263,7 @@
         //                            [NSNumber numberWithInt:5],
         //                            nil];
         
-        int segmentCount = (int)[obj.valueArray count];
+        int segmentCount = [[obj.dateArray objectAtIndex:3]intValue];
         
         for (int i = 0; i < segmentCount; i++){
             int odd = 4;
@@ -278,6 +279,9 @@
             [obj.colorArray addObject:[UIColor colorWithHue:((odd*i/segmentCount)%20)/20.0+0.28 saturation:(even*i%segmentCount+3)/10.0 brightness:91/100.0 alpha:1]];
             [obj.colorArray2 addObject:[UIColor colorWithHue:((odd2*i/segmentCount)%20)/20.0+0.075 saturation:(even2*i%segmentCount+3)/10.0 brightness:91/100.0 alpha:1]];
             
+            obj.startValue = [[obj.dateArray objectAtIndex:1] intValue];
+            obj.endValue = [[obj.dateArray objectAtIndex:3] intValue];
+            // Instantly starts the picker by setting the values to the first date.
         }
     }
     

@@ -13,7 +13,7 @@
 #import "MenuViewController.h"
 #import "DataClass.h"
 
-@interface PieChartWheelViewController : UIViewController <PieChartDelegate>
+@interface PieChartWheelViewController : UIViewController <PieChartDelegate,UIPickerViewDataSource,UIPickerViewDelegate>
 
 @property (nonatomic,strong) NSMutableArray *valueArray;
 @property (nonatomic,strong) NSMutableArray *colorArray;
@@ -28,6 +28,7 @@
 @property (nonatomic,strong) IBOutlet UILabel *displayRangeLbl;
 @property (strong, nonatomic) NSMutableArray *json;
 @property (weak, nonatomic) IBOutlet UILabel *IDlbl;
+@property (nonatomic, retain) IBOutlet UIPickerView *picker;
 
 @property (weak, nonatomic) IBOutlet UIWebView *requestWebView;
 

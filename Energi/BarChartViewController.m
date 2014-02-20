@@ -33,10 +33,6 @@
     
     self.picker.delegate = self;
     // Shows the picker on the view.
-    
-    obj.startValue = [[obj.dateArray objectAtIndex:1] intValue];
-    obj.endValue = [[obj.dateArray objectAtIndex:3] intValue];
-    // Instantly starts the picker by setting the values to the first date.
 
 }
 
@@ -59,9 +55,8 @@
     DataClass *obj = [DataClass getInstance];
     return [obj.dateArray objectAtIndex:2*row];
 }
-- (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row   inComponent:(NSInteger)component
+- (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
 {
-
     DataClass *obj = [DataClass getInstance];
     obj.startValue = [[obj.dateArray objectAtIndex:(2*row + 1)] intValue];
     obj.endValue = [[obj.dateArray objectAtIndex:(2*row + 3)] intValue];
