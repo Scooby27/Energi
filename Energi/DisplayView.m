@@ -44,13 +44,13 @@
     NSMutableArray *titleArray = [[NSMutableArray alloc] init];
     
     if(barGraphChangeUnit){
-        for (int i = startValue; i <= endValue; i++){
+        for (int i = startValue; i < endValue; i++){
             [valueArray addObject:[obj.valueArray objectAtIndex:i]];
             [titleArray addObject:[obj.titleArray objectAtIndex:i]];
         }
         colorArray = obj.colorArray;
     }else{
-        for (int i = startValue; i <= endValue; i++){
+        for (int i = startValue; i < endValue; i++){
             [valueArray addObject:[obj.valueArray2 objectAtIndex:i]];
             [titleArray addObject:[obj.titleArray2 objectAtIndex:i]];
         }

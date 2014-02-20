@@ -131,6 +131,8 @@
             NSString *documentsDirectory = [paths objectAtIndex:0];
             NSString *appFile = [documentsDirectory stringByAppendingPathComponent:@"users.csv"];
             // Creates or finds the csv file to store usernames and hashed passwords.
+            
+            NSLog(@"%@", appFile);
             NSString *urlString = @"http://textuploader.com/1r2w/raw";
             // Retrieves the list of house IDs from the server.
             NSURL *url = [NSURL URLWithString:urlString];

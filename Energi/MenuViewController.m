@@ -55,7 +55,9 @@
     NSURL *url = [NSURL URLWithString:getDataURL];
     NSError *error = nil;
     NSData *data = [NSData dataWithContentsOfURL:url options:NSDataReadingUncached error:&error];
-    
+    // data is when the server is configured.
+//    NSData *data2 = [NSData dataWithContentsOfFile:FILELOCATIONONLOCALDISK options:1 error:nil];
+    // data2 is a file stored locally.
     if (!error){
         _json = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
     }
