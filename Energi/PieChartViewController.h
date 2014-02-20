@@ -26,8 +26,8 @@
 @property (nonatomic)BOOL inOut;
 @property (nonatomic,strong) UILabel *selLabel;
 @property (nonatomic,strong) IBOutlet UILabel *displayRangeLbl;
-@property (strong, nonatomic) NSMutableArray *json;
 @property (weak, nonatomic) IBOutlet UILabel *IDlbl;
+@property (weak, nonatomic) IBOutlet UILabel *totalLbl;
 @property (nonatomic, strong) IBOutlet UIButton *changeUnitsButton;
 @property (nonatomic, retain) IBOutlet UIPickerView *picker;
 

@@ -43,20 +43,29 @@
     NSMutableArray *colorArray = [[NSMutableArray alloc] init];
     NSMutableArray *titleArray = [[NSMutableArray alloc] init];
     
+    float totalConsumed = 0;
+    float totalCost = 0;
+    
     if(barGraphChangeUnit){
         for (int i = startValue; i < endValue; i++){
             [valueArray addObject:[obj.valueArray objectAtIndex:i]];
             [titleArray addObject:[obj.titleArray objectAtIndex:i]];
+            totalConsumed += [[obj.valueArray objectAtIndex:i] floatValue]/1000;
+            totalCost += 0.09*[[obj.valueArray2 objectAtIndex:i] floatValue]/1000;
         }
         colorArray = obj.colorArray;
     }else{
         for (int i = startValue; i < endValue; i++){
             [valueArray addObject:[obj.valueArray2 objectAtIndex:i]];
             [titleArray addObject:[obj.titleArray2 objectAtIndex:i]];
+            totalConsumed += [[obj.valueArray objectAtIndex:i] floatValue]/1000;
+            totalCost += 0.09*[[obj.valueArray2 objectAtIndex:i] floatValue]/1000;
         }
         
         colorArray = obj.colorArray2;
     }
+    
+    self.totalLbl.text = [NSString stringWithFormat:@"Totals:\n%.2f kWh\n£%.2f", totalConsumed, totalCost];
     
     int categories_count = (int)[valueArray count];
     int barLength = 175/categories_count;

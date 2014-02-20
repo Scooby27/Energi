@@ -28,6 +28,7 @@
 @property (nonatomic,strong) IBOutlet UILabel *displayRangeLbl;
 @property (strong, nonatomic) NSMutableArray *json;
 @property (weak, nonatomic) IBOutlet UILabel *IDlbl;
+@property (weak, nonatomic) IBOutlet UILabel *totalLbl;
 @property (nonatomic, retain) IBOutlet UIPickerView *picker;
 
 @property (weak, nonatomic) IBOutlet UIWebView *requestWebView;

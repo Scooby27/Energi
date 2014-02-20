@@ -59,16 +59,24 @@
     self.titleArray = [[NSMutableArray alloc] init];
     self.titleArray2 = [[NSMutableArray alloc] init];
     
+    float totalConsumed = 0;
+    float totalCost = 0;
+    
     for (int i = startValue; i < endValue; i++){
         [self.valueArray addObject:[obj.valueArray objectAtIndex:i]];
         [self.titleArray addObject:[obj.titleArray objectAtIndex:i]];
+        totalConsumed += [[obj.valueArray objectAtIndex:i] floatValue]/1000;
     }
     
     for (int i = startValue; i < endValue; i++){
         [self.valueArray2 addObject:[obj.valueArray2 objectAtIndex:i]];
         [self.titleArray2 addObject:[obj.titleArray2 objectAtIndex:i]];
+        totalCost += 0.09*[[obj.valueArray2 objectAtIndex:i] floatValue]/1000;
     }
     // Sets the values for each certain day.
+    
+    self.totalLbl.text = [NSString stringWithFormat:@"Totals:\n%.2f kWh\n£%.2f", totalConsumed, totalCost];
+    // Displays the total values for that day.
     
     //add shadow img
     CGRect pieFrame = CGRectMake((self.view.frame.size.width - PIE_HEIGHT) / 2, 100-0, PIE_HEIGHT, PIE_HEIGHT);

@@ -10,8 +10,10 @@
 #import "ECGraph.h"
 #import "DataClass.h"
 
-@interface DisplayView : UIView <ECGraphDelegate>{
+@interface DisplayView : UIView <ECGraphDelegate>
 
-}
+
+@property (weak, nonatomic) IBOutlet UILabel *totalLbl;
+
 
 @end
