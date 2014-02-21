@@ -49,14 +49,14 @@
     obj.colorArray2 = [[NSMutableArray alloc] init];
     obj.dateArray = [[NSMutableArray alloc] init];
     
-    NSString *houseID = obj.houseID;
+//    NSString *houseID = obj.houseID;
     
-    NSString *getDataURL = [NSString stringWithFormat:@"http://localhost/%@.php", houseID];
-    NSURL *url = [NSURL URLWithString:getDataURL];
+//    NSString *getDataURL = [NSString stringWithFormat:@"http://localhost/%@.php", houseID];
+//    NSURL *url = [NSURL URLWithString:getDataURL];
     NSError *error = nil;
-    NSData *data = [NSData dataWithContentsOfURL:url options:NSDataReadingUncached error:&error];
+//    NSData *data = [NSData dataWithContentsOfURL:url options:NSDataReadingUncached error:&error];
     // data is when the server is configured.
-//    NSData *data2 = [NSData dataWithContentsOfFile:FILELOCATIONONLOCALDISK options:1 error:nil];
+    NSData *data = [NSData dataWithContentsOfFile:@"/Users/Scooby/Library/Application Support/iPhone Simulator/7.0.3-64/Applications/B287A5A3-E8ED-4E1B-B8CD-3EB615C4D81E/Documents/101006.txt" options:1 error:nil];
     // data2 is a file stored locally.
     if (!error){
         _json = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
